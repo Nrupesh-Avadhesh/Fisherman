@@ -1,0 +1,143 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.29 Revolution css
+/*----------------------------------------*/
+
+.revolution__intro {
+  h3 {
+    line-height: 1.5;
+  }
+}
+.revolution__wrapper {
+  position: relative;
+  border: 1px solid var(--bd-border-primary);
+  padding: 60px 60px;
+  @include border-radius(6px);
+  background: linear-gradient(
+    207deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  @media #{$sm} {
+    padding: 35px 35px;
+  }
+  @media #{$xs} {
+    padding: 30px 30px;
+  }
+}
+.revolution__shape {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  position: absolute;
+  right: 60px;
+  border-top: 1px solid var(--bd-border-primary)
+}
+.revolution__shape:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: var(--bd-border-primary);
+  content: "";
+  width: 1px;
+}
+.revolution__grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-between;
+  position: relative;
+  row-gap: 40px;
+  @media #{$md} {
+    grid-template-columns: auto auto auto;
+  }
+  @media #{$xs, $sm} {
+    grid-template-columns: auto auto;
+  }
+  @media #{$xs} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 30px;
+  }
+  @media #{$xxs} {
+    justify-content: center;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    top: 90px;
+    z-index: -1;
+    @include light {
+      border-top: 1px dashed rgb(200, 195, 195);
+    }
+    @media #{$xs, $sm, $md} {
+      display: none;
+    }
+  }
+}
+.revolution__content {
+  & > p {
+    margin-bottom: 0;
+  }
+}
+.revolution__number {
+  margin-bottom: 20px;
+  h2 {
+    height: 168px;
+    width: 168px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: var(--bd-theme-primary);
+    font-size: 52px;
+    @media #{$xs} {
+      height: 150px;
+      width: 150px;
+      font-size: 40px;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      top: 50%;
+      @extend %translate1_2;
+      left: 50%;
+      @include border-radius(50%);
+      background: var(--bd-bg-2);
+      z-index: -1;
+      @include light {
+        border: 1px dashed rgb(200, 195, 195);
+      }
+    }
+  }
+}
+.revolution__item {
+  &.is-mainly-red {
+    .revolution__number {
+      h2 {
+        color: rgba(251, 81, 65, 1);
+      }
+    }
+  }
+  &.is-mainly-blue {
+    .revolution__number {
+      h2 {
+        color: rgba(103, 74, 217, 1);
+      }
+    }
+  }
+  &.is-mainly-pink {
+    .revolution__number {
+      h2 {
+        color: rgba(229, 64, 163, 1);
+      }
+    }
+  }
+}

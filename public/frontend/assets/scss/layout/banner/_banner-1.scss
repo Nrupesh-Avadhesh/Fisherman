@@ -1,0 +1,111 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.1 banner Style 1
+/*----------------------------------------*/
+
+
+// Banner style
+.banner__content-wrapper {
+	padding: 80px 0;
+	@media #{$xs} {
+		padding: 60px 0;
+	}
+}
+.banner__thumb-box {
+	@media (min-width: 1400px) {
+	.container {
+			max-width: 1370px;
+		}
+	}
+}
+.banner__sbutitle {
+	font-size: 14px;
+	font-weight: var(--bd-fw-medium);
+	line-height: 1;
+	display: inline-block;
+	padding: 10px 15px;
+	background: var(--bd-gradient-2);
+	color: var(--bd-gradient-2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+	z-index: 5;
+	margin-bottom: 15px;
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: var(--bd-gradient-2);
+		opacity: 0.0799999982;
+		z-index: -1;
+		top: 0;
+		left: 0;
+	}
+}
+.banner__content {
+	max-width: 936.86px;
+	margin: auto;
+	h2 {
+		font-size: 80px;
+		line-height: 1.2;
+		margin-bottom: 20px;
+		font-weight: var(--bd-fw-sbold);
+		@media #{$xxl} {
+			font-size: 74px;
+		}
+		@media #{$xl} {
+			font-size: 68px;
+		}
+		@media #{$lg} {
+			font-size: 66px;
+		}
+		@media #{$md} {
+			font-size: 60px;
+		}
+		@media #{$sm} {
+			font-size: 48px;
+		}
+		@media #{$xs} {
+			font-size: 40px;
+		}
+		@media #{$xxs} {
+			font-size: 32px;
+		}
+	}
+	& > p {
+		max-width: 545px;
+		margin: 0px auto 35px;
+	}
+}
+.banner__thumb {
+	img {
+		@include border-radius(6px);
+	}
+}
+.banner__glow {
+	.glow-1 {
+		background: var(--bd-theme-secondary);
+		@include border-radius(50%);
+		width: 297px;
+		height: 297px;
+		filter: blur(200px);
+		-webkit-filter: blur(200px);
+		position: absolute;
+		top: -80px;
+		z-index: -1;
+		left: 30%;
+	}
+	.glow-2 {
+		background: linear-gradient( 90deg, rgba(87, 63, 234, 1) 0%, rgba(161, 145, 255, 1) 100% );
+		@include border-radius(50%);
+		width: 297px;
+		height: 297px;
+		filter: blur(200px);
+		-webkit-filter: blur(200px);
+		position: absolute;
+		z-index: -1;
+		top: -114px;
+		right: 34%;
+	}
+}

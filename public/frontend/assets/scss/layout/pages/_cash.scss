@@ -1,0 +1,125 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.7 Cash css
+/*----------------------------------------*/
+.cash__content {
+	padding-right: 90px;
+	@media #{$xl, $lg} {
+		padding-right: 30px;
+	}
+	@media #{$xs, $sm, $md} {
+		padding-right: 0;
+	}
+	& > p {
+		margin-bottom: 35px;
+	}
+}
+.cash__thumb-wreapper {
+	margin: 0 43px;
+	@media #{$xs, $sm, $lg} {
+		margin: 0px;
+	}
+}
+.cash__round-glow {
+	background: rgba(255, 255, 255, 1);
+	@include border-radius(50%);
+	width: 209px;
+	height: 209px;
+	filter: blur(150px);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@extend %translate1_2;
+	@media #{$xxs} {
+		width: 150px;
+		height: 150px;
+	}
+}
+.cash__thumb {
+	max-width: 270px;
+	margin: 0 auto;
+	@include box-shadow(84.08px 28.02px 140.14px 0px rgba(9, 20, 50, 0.15));
+	@include light {
+		box-shadow: 84.08px 28.02px 140.14px 0px rgb(249, 249, 249);
+	}
+	@media #{$xxs} {
+		max-width: 220px;
+	}
+}
+.cash__round-box {
+	-webkit-animation: spin 20s infinite linear;
+	animation: spin 20s infinite linear;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+	.round-01 {
+		@include border-radius(50%);
+		border-style: dashed;
+		border-color: rgba(255, 255, 255, 0.5);
+		@include light {
+			border-color: rgba(164, 164, 164, 0.5);
+		}
+		border-width: 2px;
+		width: 355px;
+		height: 355px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@extend %translate1_2;
+	}
+	.round-02 {
+		@include border-radius(50%);
+		border-style: dashed;
+		border-color: rgba(255, 255, 255, 0.5);
+		@include light {
+			border-color: rgba(164, 164, 164, 0.5);
+		}
+		border-width: 2px;
+		width: 307px;
+		height: 307px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@extend %translate1_2;
+	}
+	.round-03 {
+		width: 245px;
+		height: 245px;
+		@include border-radius(50%);
+		border-style: dashed;
+		border-color: rgba(255, 255, 255, 0.5);
+		@include light {
+			border-color: rgba(164, 164, 164, 0.5);
+		}
+		border-width: 2px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@extend %translate1_2;
+	}
+}
+.cash__card {
+	.card-1 {
+		position: absolute;
+		top: 128px;
+		max-width: 170px;
+		left: 0;
+		@include border-radius(6px);
+		@include box-shadow(0px 10px 20px 0px rgba(0, 0, 0, 0.20));
+	}
+	.card-2 {
+		position: absolute;
+		right: 0;
+		bottom: 74px;
+		max-width: 200px;
+		@include border-radius(6px);
+		@media #{$xxs} {
+			max-width: 170px;
+		}
+	}
+}

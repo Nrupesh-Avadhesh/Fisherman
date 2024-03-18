@@ -1,0 +1,45 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.21 Mission css
+/*----------------------------------------*/
+
+.mission__thumb {
+  background: rgba(255, 255, 255, 0.05);
+  @include border-radius(6px);
+  padding: 40px 40px;
+  position: relative;
+  z-index: 5;
+  @include light {
+    background: rgb(237, 236, 242);
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 204px;
+    width: 204px;
+    background: #674AD9;
+    opacity: 50%;
+    @include border-radius(50%);
+    filter: blur(200px);
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.mission__content {
+  padding: 0 50px;
+  @media #{$xl} {
+    padding-right: 0;
+  }
+  @media #{$xs, $sm, $md, $lg} {
+    padding: 0;
+  }
+  p {
+    strong {
+      color: var(--bd-theme-primary);
+      font-weight: var(--bd-fw-normal);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteBase /fishermangroup.com/
+
+    # Redirect requests to /public/ if they're not already there
+    RewriteCond %{REQUEST_URI} !^/public/ 
+    RewriteRule ^(.*)$ /public/$1 [L]
+
+    # If the request is not a directory or a file, pass it to public/index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ /public/index.php [L]
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css|json)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>

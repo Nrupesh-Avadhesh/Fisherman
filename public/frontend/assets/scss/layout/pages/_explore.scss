@@ -1,0 +1,141 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.13 Explore css
+/*----------------------------------------*/
+
+.explore__round {
+	@include border-radius(50%);
+	width: 523px;
+	height: 523px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgb(6, 6, 6);
+	box-shadow: 0px 0px 200px 0px rgba(5, 157, 255, 0.3) inset;
+	border: 18px solid var(--bd-theme-primary);
+	margin: 0 auto;
+	@include light {
+		background: rgb(249, 249, 249);
+	};
+
+	@media #{$lg} {
+		width: 435px;
+		height: 435px;
+	}
+
+	@media #{$xs} {
+		width: 420px;
+		height: 420px;
+	}
+
+	@media #{$xxs} {
+		width: 289px;
+		height: 289px;
+		border: 10px solid var(--bd-theme-primary);
+	}
+}
+
+.explore__round-content {
+	max-width: 290px;
+	h2,
+	span {
+		font-size: 80px;
+		font-weight: var(--bd-fw-sbold);
+		line-height: 1;
+		display: inline-flex;
+		@media #{$xs} {
+			font-size: 66px;
+		}
+
+		@media #{$xxs} {
+			font-size: 50px;
+		}
+	}
+
+	span {
+		color: rgba(251, 81, 65, 1);
+	}
+
+	P {
+		margin-bottom: 0;
+		margin-top: 15px;
+	}
+}
+
+.explore__content {
+	padding-right: 45px;
+	padding-left: 50px;
+
+	@media #{$xl} {
+		padding-right: 0px;
+	}
+
+	@media #{$xs, $sm, $md, $lg} {
+		padding: 0px;
+	}
+
+	&>p {
+		margin-bottom: 35px;
+	}
+}
+
+// Explore Tab
+.explore__tab {
+	padding-left: 25px;
+	height: 100%;
+	position: relative;
+
+	&::after {
+		position: absolute;
+		content: "";
+		height: 220px;
+		width: 1px;
+		background: var(--bd-border-primary);
+		top: 0;
+		left: 0;
+	}
+
+	.nav-tabs {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 5px;
+
+		.nav-link {
+			background: transparent;
+			font-size: 20px;
+			font-weight: var(--bd-fw-medium);
+			text-align: left;
+			position: relative;
+			color: rgba(255, 255, 255, 0.8);
+			padding: 13px 0;
+
+			&.active {
+				color: var(--bd-common-white);
+
+				&:after {
+					position: absolute;
+					content: "";
+					height: 53px;
+					width: 5px;
+					background: var(--bd-theme-primary);
+					left: -27px;
+					top: 0;
+				}
+			}
+
+			@include light {
+				color: var(--bd-common-black);
+
+				&.active {
+					color: var(--bd-common-black);
+
+					&:after {
+						background: var(--bd-theme-primary);
+					}
+				}
+			}
+		}
+	}
+}

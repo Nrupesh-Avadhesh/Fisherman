@@ -1,0 +1,51 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.10 Coverage css
+/*----------------------------------------*/
+
+.coverage__thumb {
+	img {
+        max-width: 388px;
+        border-radius: 10px;
+	}
+}
+.coverage__thumb-1 {
+	margin-bottom: 237px;
+}
+.coverage__thumb-2 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.coverage__shape-1 {
+    position: absolute;
+    left: 25%;
+    bottom: 33%;
+    z-index: -1;
+	@media #{$xs, $sm, $md} {
+		left: 15%;
+		bottom: 25%;
+	}
+	img {
+		max-width: 24px;
+	}
+}
+.coverage__shape-2 {
+    position: absolute;
+    right: 19%;
+    top: 140px;
+    z-index: -1;
+	img {
+		max-width: 63px;
+	}
+}
+.coverage__content {
+    padding-left: 50px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-left: 0;
+	}
+	& > p {
+		margin-bottom: 30px;
+	}
+}

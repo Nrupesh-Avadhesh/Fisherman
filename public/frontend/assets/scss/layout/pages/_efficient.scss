@@ -1,0 +1,59 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.11 Efficient css
+/*----------------------------------------*/
+
+.efficient__thumb-wrapper {
+    margin-bottom: 40px;
+    .card-1 {
+        position: absolute;
+        top: 30px;
+        right: 0;
+        max-width: 182px;
+        img {
+            @include border-radius(6px);
+        }
+    }
+    .card-2 {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        max-width: 226px;
+        img {
+            @include border-radius(6px);
+        }
+    }
+}
+.efficient__thumb {
+	max-width: 366px;
+	margin: 0 auto;
+	padding: 45px 45px;
+	border-radius: 8.101px;
+	background: linear-gradient(180deg, rgba(18, 18, 18, 0.50) 0%, #121212 100%);
+    position: relative;
+    @include light {
+        background: linear-gradient(180deg, rgb(25, 25, 25) 0%, #121212 100%);
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        background: #674AD9;
+        border-radius: 160.98px;
+        width: 216px;
+        height: 215px;
+        filter: blur(216.08px);
+        right: 65px;
+        top: 98px;
+        z-index: -1;
+    }
+}
+.efficient__content {
+	padding: 0 45px;
+    @media #{$xl} {
+        padding-right: 0;
+    }
+    @media #{$xs,$sm,$md,$lg} {
+        padding: 0;
+    }
+}

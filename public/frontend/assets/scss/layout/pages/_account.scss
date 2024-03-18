@@ -1,0 +1,72 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.2 Acount css
+/*----------------------------------------*/
+
+.account__open-box {
+    @include border-radius(6px);
+    background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+    padding: 80px 120px;
+    position: relative;
+    top: 140px;
+    z-index: 5;
+    @media #{$lg} {
+      padding: 80px 30px;
+    }
+    @media #{$xs, $sm, $md} {
+      padding: 40px 30px;
+    }
+.bubble__1 {
+    background: var(--bd-common-white);
+    @include border-radius(50%);
+    opacity: 0.20;
+    width: 154px;
+    height: 154px;
+    position: absolute;
+    bottom: -38px;
+    right: calc(100% - 100px);
+    z-index: -1;
+    -webkit-clip-path: polygon(100% 0%, 100% 50%, 106.49% 75.32%, 36.04% 75.0%, 35.39% -3.9%);
+    clip-path: polygon(100% 0%, 100% 50%, 106.49% 75.32%, 36.04% 75.0%, 35.39% -3.9%);
+  }
+  .bubble__2 {
+    background: var(--bd-common-white);
+    @include border-radius(50%);
+    opacity: 0.20;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    bottom: 40%;
+    right: 20%;
+    z-index: -1;
+    -webkit-animation: bubble 7s linear infinite alternate;
+    -moz-animation: bubble 7s linear infinite alternate;
+    -o-animation: bubble 7s linear infinite alternate;
+    animation: bubble 7s linear infinite alternate;
+  }
+  .bubble__3 {
+    background: var(--bd-common-white);
+    @include border-radius(50%);
+    opacity: 0.20;
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    bottom: 12%;
+    right: 4%;
+    z-index: -1;
+    -webkit-animation: leftright 1s infinite alternate;
+    animation: leftright 1s infinite alternate;
+  }
+}
+.account__open-thumb {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    @media #{$lg} {
+      left: 30px;
+    }
+    @media #{$xs, $sm, $md} {
+      display: none;
+    }
+}

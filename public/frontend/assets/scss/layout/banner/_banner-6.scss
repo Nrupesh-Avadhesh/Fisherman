@@ -1,0 +1,154 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.1 Banner Style 6
+/*----------------------------------------*/
+
+// Banner style 6
+.banner-6 {
+	padding-top: 160px;
+	padding-bottom: 60px;
+	background: var(--bd-bg-1);
+	@media #{$md} {
+		padding-top: 126.5px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm} {
+		padding-top: 145.5px;
+		padding-bottom: 60px;
+	}
+	@media #{$xs} {
+		padding-top: 150px;
+		padding-bottom: 40px;
+	}
+	@media (min-width: 1441px) {
+		.container {
+			max-width: 1390px;
+		}
+	}
+}
+.banner__glow-6 {
+	.glow-1 {
+		background: #573fea;
+		@include border-radius(50%);
+		width: 311px;
+		height: 311px;
+		filter: blur(200px);
+		position: absolute;
+		z-index: -1;
+		left: 16px;
+		opacity: 50%;
+	}
+	.glow-2 {
+		background: linear-gradient(-90deg, rgb(101, 73, 213) 0%, rgb(251, 83, 67) 100%);
+		@include border-radius(50%);
+		width: 369px;
+		height: 369px;
+		filter: blur(200px);
+		position: absolute;
+		right: -150px;
+		z-index: -1;
+		opacity: 50%;
+	}
+}
+.banner-overlay-5 {
+	position: relative;
+	background: rgba(6, 6, 6, 1);
+	&:before {
+		position: absolute;
+		content: "";
+		height: 715px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+		z-index: -1;
+		@media #{$xl} {
+			height: 617px;
+		}
+		@media #{$lg} {
+			height: 518px;
+		}
+		@media #{$xs, $sm, $md} {
+			height: 100%;
+			background-size: 200% 300%;
+		}
+	}
+}
+.banner__subtitle-5 {
+	font-size: 14px;
+	display: inline-block;
+	background: linear-gradient(90deg, #FB5141 40%, #089EFF 100%);
+	  background-clip: border-box;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: var(--bd-fw-medium);
+	letter-spacing: 1.68px;
+	position: relative;
+	padding: 2px 15px;
+	border: 1.5px solid rgba(255, 255, 255, 0.08);
+	border-radius: 4px;
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: rgba(14, 10, 36, 0.5);
+		z-index: -1;
+		top: 0;
+		left: 0;
+		border-radius: 4px;
+	}
+}
+.banner__title-5 {
+	font-size: 80px;
+	font-weight: var(--bd-fw-bold);
+	background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 20px;
+	@media #{$xxl} {
+		font-size: 68px;
+	}
+	@media #{$xl} {
+		font-size: 66px;
+	}
+	@media #{$lg} {
+		font-size: 50px;
+	}
+	@media #{$xs, $md} {
+		font-size: 40px;
+	}
+	@media #{$sm} {
+		font-size: 44px;
+	}
+	@media #{$xxs} {
+		font-size: 32px;
+	}
+}
+.banner__btn-group {
+	display: flex;
+	align-items: center;
+	gap: 20px 20px;
+	flex-wrap: wrap;
+}
+.banner__play {
+	height: 60px;
+	width: 60px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: #0e0a24;
+	@include border-radius(50%);
+	box-shadow: inset 0px 0px 20px 0px rgba(255, 255, 255, 0.2);
+	span {
+		position: relative;
+		top: -2px;
+	}
+}
+.banner__thumb-5 {
+	@media #{$xxl} {
+		max-width: 530px;
+	}
+}

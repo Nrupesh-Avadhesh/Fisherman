@@ -1,0 +1,82 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.23 Money css
+/*----------------------------------------*/
+.money__thumb-wrapper {
+	padding-left: 30px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-left: 0;
+	}
+}
+.money__thumb {
+	-webkit-mask-image: url(../imgs/money/wave-mask.svg);
+	mask-image: url(../imgs/money/wave-mask.svg);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	mask-size: contain;
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	&:after {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, #674AD9 0%, #FB5141 100%);
+		opacity: 0.6000000238418579;
+		mix-blend-mode: overlay;
+		left: 0;
+		top: 0;
+	}
+}
+.money__thumb-ovelay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: -10px;
+	left: 32px;
+	z-index: -1;
+	@media #{$xs, $sm, $md, $lg} {
+		left: 2px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: linear-gradient(162deg, #674AD9 0%, #FB5141 100%);
+		-webkit-mask-image: url(../imgs/money/wave-mask.svg);
+		mask-image: url(../imgs/money/wave-mask.svg);
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		mask-size: contain;
+		display: inline-flex;
+		z-index: 5;
+	}
+}
+.money__card {
+	max-width: 281px;
+	position: absolute;
+	left: 0;
+	bottom: 90px;
+	@media #{$xxs} {
+		max-width: 200px;
+	}
+}
+.money__content {
+	padding-left: 50px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-left: 0;
+	}
+	& > p {
+		strong {
+			color: var(--bd-theme-primary);
+			font-weight: var(--bd-fw-normal);
+		}
+	}
+}

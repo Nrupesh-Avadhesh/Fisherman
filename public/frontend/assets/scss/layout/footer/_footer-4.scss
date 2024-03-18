@@ -1,0 +1,106 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.4 Footer Style 4
+/*----------------------------------------*/
+
+// Footer widget 4
+.footer__widget-4 {
+	&:nth-child(1) {
+        width: 18%;
+		@media #{$lg} {
+			width: 25%;
+        }
+        @media #{$md} {
+          width: 25%;
+        }
+		@media #{$xs, $sm} {
+			width: 100%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+    }
+	&:nth-child(2) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:nth-child(3) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:nth-child(4) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:last-child {
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 62%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+	}
+	.footer__contact-info-content {
+		p {
+			color: var(--bd-common-white);
+		}
+	}
+	.footer__content {
+		& > P {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+// Footer Bottom 2
+.footer__bottom-2 {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 0;
+	border-top: 1px solid var(--bd-border-primary);
+	flex-wrap: wrap;
+	gap: 20px 30px;
+	@media #{$xs} {
+		justify-content: center;
+	}
+	&.bt-0 {
+		border-top: 0;
+	}
+}

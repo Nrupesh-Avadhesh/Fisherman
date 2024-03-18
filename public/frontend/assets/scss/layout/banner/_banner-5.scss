@@ -1,0 +1,148 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.1 Banner Style 5
+/*----------------------------------------*/
+
+// Banner style 5
+
+.banner-5 {
+	padding-top: 105.5px;
+	padding-bottom: 100px;
+	border-bottom: 1px solid var(--bd-border-primary);
+	@media #{$md} {
+		padding-top: 126.5px;
+		padding-bottom: 80px;
+	}
+	@media #{$sm} {
+		padding-top: 145.5px;
+		padding-bottom: 80px;
+	}
+	@media #{$xs} {
+		padding-top: 135.5px;
+		padding-bottom: 80px
+	}
+	@media (min-width: 1400px) {
+		.container {
+			max-width: 1390px;
+		}
+	}
+}
+.banner-overlay-5 {
+	position: relative;
+	&:before {
+		position: absolute;
+		content: "";
+		height: 715px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+		z-index: -1;
+		@media #{$xl} {
+			height: 617px;
+		}
+		@media #{$lg} {
+			height: 518px;
+		}
+		@media #{$xs, $sm, $md} {
+			height: 100%;
+			background-size: 200% 300%;
+		}
+	}
+	&::after {
+		position: absolute;
+		content: "";
+		height: 288px;
+		width: 100%;
+		background: linear-gradient(360deg, #060606 0%, rgba(6, 6, 6, 0) 100%);
+		bottom: 270px;
+		left: 0;
+		z-index: -1;
+		@media #{$xs, $sm, $md} {
+			bottom: 0px;
+		}
+	}
+}
+.banner__thumb-wrapper-4 {
+	padding-left: 155px;
+	margin-bottom: 30px;
+	position: relative;
+	top: 60px;
+	@media #{$xl} {
+		padding-left: 100px;
+	}
+	@media #{$xs, $sm, $md, $lg} {
+		padding-left: 0px;
+	}
+	@media #{$xs, $sm, $md} {
+		padding-left: 0px;
+		top: 0px;
+		margin-bottom: 50px;
+	}
+	.thumb-1 {
+		position: absolute;
+		max-width: 313px;
+		top: 50%;
+		left: 0;
+		@extend %translateY1_2;
+		@media #{$xl} {
+			max-width: 270px;
+		}
+		@media #{$lg} {
+			max-width: 230px;
+			left: -40px
+		}
+		@media #{$xxs,$md} {
+			max-width: 200px;
+			left: 40px
+		}
+	}
+}
+.banner__content-5 {
+	padding-right: 20px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-right: 0;
+	} 
+	& > P {
+		max-width: 545px;
+		color: rgba(255, 255, 255, 0.60);
+	}
+}
+.banner__title-5 {
+	font-size: 80px;
+	font-weight: var(--bd-fw-bold);
+	background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: 20px;
+	@media #{$xxl} {
+		font-size: 70px;
+	}
+	@media #{$xl} {
+		font-size: 66px;
+	}
+	@media #{$lg} {
+		font-size: 56px;
+	}
+	@media #{$xs, $md} {
+		font-size: 40px;
+	}
+	@media #{$sm} {
+		font-size: 44px;
+	}
+	@media #{$xxs} {
+		font-size: 32px;
+	}
+}
+.fact-number {
+	font-size: 71px;
+	font-weight: 700;
+	color: var(--bd-theme-primary);
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--bd-theme-primary);
+	line-height: 1;
+	position: relative;
+	display: block;
+	font-family: var(--bd-ff-body);
+}

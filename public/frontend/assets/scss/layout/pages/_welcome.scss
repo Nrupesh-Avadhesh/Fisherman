@@ -1,0 +1,63 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.41 Welcome css
+/*----------------------------------------*/
+
+.welcome__wrapper {
+  min-height: 315px;
+  z-index: 99;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.00) 100%);
+    top: 0;
+    left: 0;
+    border-radius: 6px 6px 0 0;
+    opacity: 30%;
+    z-index: 5;
+  }
+}
+.welcome__app {
+  max-width: 185px;
+  position: absolute;
+  left: 14%;
+  bottom: 0;
+  z-index: 55;
+}
+.welcome__thumb-bg {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 6px 6px 0 0;
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(101, 73, 213, 0.6) 0%, rgba(251, 83, 67, 0.6) 100%), url(../imgs/bg/welcome-thumb.jpg) no-repeat scroll right top;
+    top: 0;
+    left: 0;
+    border-radius: 6px 6px 0 0;
+    z-index: 5;
+  }
+}
+.welcone-bg {
+	position: relative;
+	&:before {
+    position: absolute;
+    content: "";
+    top: 110px;
+    height: 94%;
+    width: 100%;
+    background: linear-gradient(90deg, #674AD9 0%, #FB5141 100%);
+    opacity: 0.20;
+    clip-path: polygon(0px 0px, 100% 0px, 100% 73%, 50% 100%, 2px 73%);
+	}
+}

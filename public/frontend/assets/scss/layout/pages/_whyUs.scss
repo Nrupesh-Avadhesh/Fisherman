@@ -1,0 +1,123 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.42 Why css
+/*----------------------------------------*/
+
+.why-us__item {
+  @include border-radius(6px);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px 20px 25px;
+  position: relative;
+  @include light {
+    background: rgba(206, 206, 206, 0.57);
+  }
+  &.is-mainly-red {
+    .why-us__icon {
+      span {
+        &::after {
+          background-color: rgba(251, 81, 65, 1);
+        }
+      }
+    }
+    &::before {
+      background: linear-gradient(180deg, rgba(251, 81, 65, 0.15) 0%, rgba(251, 81, 65, 0.0) 100%);
+    }
+  }
+  &.is-mainly-blue {
+    .why-us__icon {
+      span {
+        &::after {
+          background-color: rgba(103, 74, 217, 1);
+        }
+      }
+    }
+    &::before {
+      background: linear-gradient(180deg, rgba(103, 74, 217, 0.15) 0%, rgba(5, 157, 255, 0.0) 100%);
+    }
+  }
+  &.is-mainly-pink {
+    .why-us__icon {
+      span {
+        &::after {
+          background-color: rgba(229, 64, 163, 1);
+        }
+      }
+    }
+    &::before {
+      background: linear-gradient(180deg, rgba(229, 64, 163, 0.15) 0%, rgba(229, 64, 163, 0.0) 100%);
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(5, 157, 255, 0.15) 0%, rgba(5, 157, 255, 0.0) 100%);
+    @include border-radius(6px);
+    opacity: 0;
+    @extend %bd-transition;
+  }
+  &:hover {
+    .why-us__icon {
+      span {
+        animation-name: wobble-vertical;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+      }
+    }
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+.why-us__icon {
+  span {
+    width: 90px;
+    height: 90px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include border-radius(50%);
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 5;
+    font-size: 34px;
+    color: var(--bd-common-white);
+    &::before {
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      @extend %translate1_2;
+      background-color: rgba(5, 157, 255, 0.1);
+      @include border-radius(50%);
+      z-index: -1;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      height: 75%;
+      width: 75%;
+      top: 50%;
+      left: 50%;
+      @extend %translate1_2;
+      background: var(--bd-theme-primary);
+      @include border-radius(50%);
+      z-index: -1;
+    }
+  }
+}
+.why-us__content {
+  h4 {
+    margin-bottom: 20px;
+  }
+  P {
+    margin-bottom: 0;
+  }
+}

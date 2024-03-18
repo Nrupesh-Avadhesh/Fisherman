@@ -1,0 +1,72 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.39 Trusted css
+/*----------------------------------------*/
+
+.trusted__thumb-wrapper {
+  padding-right: 75px;
+  padding-left: 70px;
+  @media #{$xs,$sm,$md,$lg,$xl} {
+    padding: 0;
+  }
+}
+.trusted__thumb {
+  max-width: 450px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 45px;
+  img {
+    border-radius: 0 0 212px 212px;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 450px;
+    width: 450px;
+    background: var(--bd-bg-5);
+    @include border-radius(50%);
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    @extend %translateX1_2;
+    @include light {
+      background: rgb(235, 235, 235);
+    }
+    @media #{$xxs} {
+      height: 320px;
+      width: 320px;
+    }
+  }
+}
+.trusted__card {
+  max-width: 320px;
+  position: absolute;
+  bottom: -20px;
+  transform: rotate(10deg);
+  left: 20px;
+  @media #{$xs, $sm, $md} {
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg)
+  }
+}
+.trusted__content {
+  padding-left: 60px;
+  padding-right: 35px;
+  @media #{$xs,$sm,$md,$lg,$xl} {
+    padding-left: 0px;
+  }
+  @media #{$xs,$sm,$md,$lg} {
+    padding-right: 0px;
+  }
+  &>p {
+    margin-bottom: 35px;
+  }
+}
+.trusted__meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 45px;
+}

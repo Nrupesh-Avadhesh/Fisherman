@@ -1,0 +1,466 @@
+@use '../utils' as *;
+
+/*-----------------------------------------------------------------------------------
+
+    Template Name: Finwise - Online Banking & Finance HTML5 Template
+    Author: Bdevs
+    Support: https://support.bdevs.net/
+    Description: Finwise - Online Banking & Finance HTML5 Template
+    Version: 1.0
+	Developer: Sagor Khan Omi
+
+-----------------------------------------------------------------------------------
+
+/************ TABLE OF CONTENTS ***************
+
+	-----------------
+    01. THEME CSS
+	-----------------
+		1.1 Mixins
+		1.2 Root
+		1.3 Typography
+		1.4 Extends
+		1.5 Colors
+		1.6 Breakpoint
+		1.7 Index
+		1.8 Main
+		
+	-----------------
+    02. COMPONENTS CSS
+	-----------------
+		2.1 Animations
+		2.2 Background
+		2.3 Back to top
+		2.4 Breadcrumb
+		2.5 Buttons
+		2.6 Carousel 
+		2.7 Light Mode
+		2.8 Nice Select
+		2.9 Offcanvas
+		2.10 Placeholder
+		2.11 Range Slider
+		2.12 Section Title
+		2.13 Shortcodes
+		2.14 Tab
+		2.15 index
+
+
+	-----------------
+    03. HEADER CSS
+	-----------------
+	    3.1 Header
+		3.2 Header Style 01
+		3.2 Header Style 02
+		3.4 Header Style 03
+		3.5 Header Style 04
+		3.5 Header Style 05
+		3.6 Header Style 06
+		3.7 index
+
+    ---------------------------------
+	04. MENU CSS
+	---------------------------------
+		4.1 Meanmenu
+		4.2 Menu
+		4.3 index
+
+	---------------------------------
+	05. BLOG CSS
+	---------------------------------
+		5.1 Postbox css
+		5.2 Recent Post css
+		5.3 Sidebar css
+		5.4 Blog css
+		5.5 index
+
+	---------------------------------
+	06. FOOTER CSS
+	---------------------------------
+		6.1 Footer  Common
+		6.2 Footer Style 01
+		6.2 Footer Style 02
+		6.4 Footer Style 03
+		6.5 Footer Style 04
+		6.6 Footer Style 05
+		6.7 Footer Style 06
+		6. index
+
+	---------------------------------
+	07. PAGES CSS
+	---------------------------------
+		7.1 About css
+		7.2 Account css
+		7.3 Answer css
+		7.4 Benefits css
+		7.5 Brand css
+		7.6 Case css
+		7.7 Cash css
+		7.8 Compare css
+		7.9 Contact css
+		7.10 Coverage css
+		7.11 Demo css
+		7.12 Efficient css
+		7.13 Error css
+		7.14 Explore css
+		7.15 Faq css
+		7.16 Features css
+		7.17 Feedback css
+		7.18 Finance css
+		7.19 Income css
+		7.20 Loan css
+		7.21 Login css
+		7.22 Mission css
+		7.23 Mobile App css
+		7.24 Money css
+		7.25 Offer css
+		7.26 Our Values css
+		7.27 Pay Day css
+		7.28 Payment css
+		7.29 Price css
+		7.30 Privacy Policy css
+		7.31 Revolution css
+		7.32 Services css
+		7.33 Slider css
+		7.34 Solution css
+		7.35 Support css
+		7.36 Team css
+		7.37 Testimonial css
+		7.38 Trade css
+		7.39 Transaction css
+		7.40 Trusted css
+		7.41 Wealth css
+		7.42 Welcome css
+		7.43 Why Choose css
+		7.44 Why Us css
+		7.45 Widget css
+		7.46 Work Step css
+		7.47 index css
+
+/*----------------------------------------*/
+/*  1.1 Theme Default
+/*----------------------------------------*/
+
+// Google Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+}
+
+/*---------------------------------
+    Typography css start 
+---------------------------------*/
+body {
+	font-family: var(--bd-ff-body);
+	font-size: var(--bd-fs-body);
+	font-weight: normal;
+	color: var(--bd-text-body);
+	line-height: 26px;
+	background: var(--bd-body-primary);
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--bd-ff-body);
+	color: var(--bd-text-primary);
+	margin-top: 0px;
+	line-height: 1.2;
+	margin-bottom: 0;
+	font-weight: var(--bd-fw-medium);
+	word-break: break-word;
+}
+
+h1 {
+	font-size: var(--bd-fs-h1);
+	font-weight: var(--bd-fw-sbold);
+	@media #{$xxl} {
+		font-size: 72px;
+	}
+	@media #{$xl} {
+		font-size: 60px;
+	}
+	@media #{$lg} {
+		font-size: 52px;
+	}
+	@media #{$md} {
+		font-size: 50px;
+	}
+	@media #{$sm} {
+		font-size: 40px;
+	}
+	@media #{$xs} {
+		font-size: 36px;
+	}
+}
+  
+h2 {
+font-size: var(--bd-fs-h2);
+font-weight: var(--bd-fw-sbold);
+@media #{$lg} {
+	font-size: 38px;
+  }
+  @media #{$md} {
+    font-size: 40px;
+  }
+  @media #{$sm} {
+    font-size: 40px;
+  }
+  @media #{$sm} {
+    font-size: 36px;
+  }
+  @media #{$xs} {
+    font-size: 32px;
+  }
+  @media #{$xxs} {
+    font-size: 28px;
+  }
+}
+
+h3 {
+font-size: var(--bd-fs-h3);;
+}
+
+h4 {
+font-size: var(--bd-fs-h4);
+}
+
+h5 {
+font-size: var(--bd-fs-h5);
+}
+
+h6 {
+font-size: var(--bd-fs-h6);
+}
+
+ul {
+	margin: 0px;
+	padding: 0px;
+}
+p {
+	font-size: var(--bd-fs-p);
+	font-weight: var(--bd-fw-normal);
+	color: var(--bd-text-body);
+	margin-bottom: 15px;
+	line-height: 26px;
+	letter-spacing: -0.2px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+.btn,
+button,
+span,
+sub,
+sup,
+p,
+input,
+select,
+textarea,
+li,
+img,
+svg,
+.transition-3,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@extend %bd-transition;
+}
+
+a:focus,
+.button:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a:focus,
+a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+
+a,
+button {
+	color: inherit;
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+button:hover{
+	cursor: pointer;
+}
+
+button:focus{
+    outline: 0; 
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+hr:not([size]) {
+	margin: 0;
+	border-color: var(--bd-border-primary);
+	opacity: 1;
+	border-width: 1px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea{
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.10);
+	height: 70px;
+	width: 100%;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 0.5);
+	padding-left: 20px;
+	padding-right: 20px;
+	border: none;
+	border-radius: 50px;
+}
+
+*::-moz-selection {
+  	background: var(--bd-common-selection);
+	color: var(--bd-common-white);
+	text-shadow: none;
+}
+::-moz-selection {
+  	background: var(--bd-common-selection);
+	color: var(--bd-common-white);
+	text-shadow: none;
+}
+::selection {
+  	background: var(--bd-common-selection);
+	color: var(--bd-common-white);
+	text-shadow: none;
+}
+
+*::-moz-placeholder {
+	opacity: 1;
+	font-size: 16px;
+	@include bd-placeholder{
+		color: var(--bd-common-placeholder);
+	}
+}
+*::placeholder {
+	opacity: 1;
+	font-size: 16px;
+	@include bd-placeholder{
+		color: var(--bd-common-placeholder);
+	}
+}
+
+/*----------------------------------------
+   Flaction customize
+-----------------------------------------*/
+i[class^="flaticon-"] {
+	line-height: 1;
+	top: 2px;
+	position: relative;
+	@extend %bd-transition;
+}
+
+/*----------------------------------------
+   Bootstrap customize
+-----------------------------------------*/
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+	--bs-gutter-x: 3rem;
+}
+.row {
+	--bs-gutter-x: 3rem;
+}
+@media (min-width: 1441px) {
+
+	.container,
+	.container-lg,
+	.container-md,
+	.container-sm,
+	.container-xl,
+	.container-xxl {
+		max-width: 1250px;
+	}
+}
+.custom-container {
+	max-width: 1620px;
+}
+.g-40,
+.gx-40 {
+	--bs-gutter-x: 40px;
+}
+
+.g-40,
+.gy-40 {
+	--bs-gutter-y: 40px;
+}
+
+.g-50,
+.gx-50 {
+	--bs-gutter-x: 50px;
+}
+
+.g-50,
+.gy-50 {
+	--bs-gutter-y: 50px;
+}
+
+.g-60,
+.gy-60 {
+	--bs-gutter-y: 60px;
+}
+
+// Body glow 
+.body__color-glow {
+	position: fixed;
+	left: -250px;
+	top: 250px;
+	right: auto;
+	bottom: auto;
+	z-index: -1;
+	width: 500px;
+	height: 500px;
+	border-radius: 1000px;
+	background-image: linear-gradient(90deg, #674AD9 0%, #FB5141 100%);
+	opacity: 0.25;
+	-webkit-filter: blur(100px);
+	filter: blur(100px);
+
+    &.glow-2 {
+		left: auto;
+		top: -50px;
+		right: -250px;
+		bottom: auto;
+		background: var(--bd-theme-primary);
+    }
+}

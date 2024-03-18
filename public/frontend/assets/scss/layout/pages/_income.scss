@@ -1,0 +1,56 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.18 Income css
+/*----------------------------------------*/
+.income__glow {
+    .glow-1 {
+        background: #573fea;
+        @include border-radius(50%);
+        width: 235px;
+        height: 235px;
+        transform-origin: 0 0;
+        transform: rotate(45deg) scale(1, 1);
+        filter: blur(200px);
+        position: absolute;
+        top: 72px;
+    }
+    .glow-2 {
+        background: linear-gradient(-90deg, rgb(101, 73, 213) 0%, rgb(251, 83, 67) 100%);
+        @include border-radius(50%);
+        width: 241px;
+        height: 241px;
+        filter: blur(200px);
+        position: absolute;
+        right: -120px;
+        top: -105px;
+    }
+}
+.income__content {
+	padding-left: 90px;
+    @media #{$xl} {
+        padding-left: 50px;
+    }
+    @media #{$xs, $sm, $md, $lg} {
+        padding-left: 0px;
+    }
+    & > {
+        p {
+            margin-bottom: 30px;
+        }
+    } 
+    .info__list {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 30px 20px;
+            flex-wrap: wrap;
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,136 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.14 Faq css
+/*----------------------------------------*/
+.faq__content {
+	padding-right: 65px;
+  @media #{$xs, $sm, $md, $lg} {
+    padding-right: 0;
+  }
+}
+.bd__faq {
+  .accordion-button {
+    font-size: 24px;
+    color: var(--bd-text-body);
+    background: transparent;
+    padding: 35px 100px 30px 100px;
+    padding-right: 40px;
+    display: inline-block;
+    @media #{$xxs, $lg} {
+      font-size: 20px;
+      padding: 30px 20px 24px 80px;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &:not(.collapsed) {
+      border-radius: 6px 6px 0 0;
+      background: rgba(255, 255, 255, 0.05);
+      @include light {
+        background: var(--bd-bg-10);
+      }
+      color: var(--bd-text-primary);
+      box-shadow: none;
+      &::after {
+        border-color: transparent;
+        background: var(--bd-theme-primary);
+        color: var(--bd-common-white);
+        content: "\f106";
+      }
+    }
+    &::after {
+      position: absolute;
+      left: 40px;
+      content: "\f107";
+      background-image: none;
+      font-family: var(--bd-ff-fontawesome);
+      font-size: 18px;
+      font-weight: 400;
+      height: 46px;
+      width: 46px;
+      border: 1px solid var(--bd-border-primary);
+      line-height: 46px;
+      text-align: center;
+      color: var(--bd-text-primary);
+      top: 50%;
+      @include border-radius(50%);
+      @extend %translateY1_2;
+      @media #{$xxs, $lg} {
+        left: 20px;
+      }
+    }
+  }
+  .accordion-body {
+    padding-left: 100px;
+    padding-top: 0;
+    padding-bottom: 35px;
+    padding-right: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    @include light {
+      background: var(--bd-bg-10);
+    }
+    border-radius: 0 0 6px 6px;
+    @media #{$xxs} {
+      padding-left: 80px;
+      padding-right: 25px;
+    }
+    > P {
+      margin-bottom: 0;
+    }
+  }
+  .accordion-item {
+    border: 0;
+    border: 0;
+    background: transparent;
+    &:not(:first-of-type) {
+      border-top: 0;
+      border-bottom: 1px solid var(--bd-border-primary) !important;
+    }
+  }
+}
+
+// FAQ style 2
+.fap__style-2 {
+  .bd__faq {
+    .accordion-button {
+      padding: 35px 100px;
+      padding-left: 35px;
+      @media #{$xxs} {
+        padding: 25px 75px;
+        padding-left: 25px;
+      }
+      &:not(.collapsed) {
+        @include light {
+          background: rgba(238, 238, 238, 1);
+        }
+      }
+      &::after {
+        left: auto;
+        right: 40px;
+        top: 50%;
+        @extend %translateY1_2;
+        @media #{$xxs} {
+          right: 25px;
+        }
+      }
+      span {
+        color: var(--bd-theme-primary);
+        padding-right: 3px;
+        display: inline-block;
+      }
+    }
+    .accordion-body {
+      padding-left: 40px;
+      padding-right: 100px;
+      @include light {
+        background: rgba(238, 238, 238, 1);
+      }
+      @media #{$xxs} {
+        padding: 25px;
+      }
+    }
+  }
+}
+
+

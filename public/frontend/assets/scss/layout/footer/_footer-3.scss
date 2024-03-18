@@ -1,0 +1,38 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.3 Footer Style 3
+/*----------------------------------------*/
+
+// Footer Widget 3
+.footer__widget-3-1 {
+	max-width: 280px;
+	@media #{$xs, $sm, $md} {
+		max-width: 100%;
+	}
+}
+.footer__widget-3-3 {
+	padding-left: 60px;
+	@media #{$xs, $sm, $md, $lg, $xl} {
+		padding-left: 0px;
+	}
+}
+.footer__widget-3-4 {
+	display: grid;
+}
+
+// Footer style 3
+.footer__area-3 {
+	padding-top: 160px;
+}
+.footer__newsletter-input-2 {
+	input {
+		background: transparent;
+		border-radius: 0;
+		padding: 0 65px 0px 0px;
+		border-bottom: 1px solid var(--bd-border-primary);
+		&:focus {
+			border-bottom: 1px solid var(--bd-common-white);
+		}
+	}
+}

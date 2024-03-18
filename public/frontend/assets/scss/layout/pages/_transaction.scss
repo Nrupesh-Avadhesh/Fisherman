@@ -1,0 +1,47 @@
+
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.38 Transaction CSS
+/*----------------------------------------*/
+
+.transaction__content {
+	padding-left: 90px;
+	@media #{$xs, $sm, $md, $lg ,$xl, $xxl} {
+		padding-left: 0px;
+	}
+}
+.transaction__thumb {
+	background: linear-gradient(90deg, rgba(101, 73, 213, 0.15) 0%, rgba(251, 83, 67, 0.15) 50.5208313465%, rgba(5, 157, 255, 0.15) 100%);
+	@include border-radius(6px);
+	max-width: 555px;
+	position: relative;
+	img {
+		box-shadow: 203.86px 40.77px 203.86px 0px rgba(9, 20, 50, 0.15);
+	}
+}
+.info__list {
+	ul {
+		li {
+			list-style: none;
+			position: relative;
+			padding-left: 25px;
+			font-size: 18px;
+			font-weight: var(--bd-fw-medium);
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+			&:after {
+				position: absolute;
+				content: "";
+				height: 100%;
+				width: 100%;
+				left: 0;
+				font-weight: 900;
+				background: url(../imgs/icons/check.png);
+				background-repeat: no-repeat;
+				top: 7px;
+			}
+		}
+	}
+}

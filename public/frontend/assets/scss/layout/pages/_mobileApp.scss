@@ -1,0 +1,251 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.22 Mobila App css
+/*----------------------------------------*/
+.mobile__app-area {
+	margin-top: 52px;
+	margin-bottom: 50px;
+
+	@media #{$xs, $sm, $md} {
+		padding: 0;
+	}
+
+	@media (min-width: 1400px) {
+		.container {
+			max-width: 1450px;
+		}
+	}
+}
+.mobile__app-grid {
+	display: grid;
+	grid-template-columns: 46% 45%;
+	align-items: center;
+	row-gap: 50px;
+	column-gap: 50px;
+
+	@media #{$xl} {
+		grid-template-columns: 37% auto;
+	}
+
+	@media #{$lg} {
+		grid-template-columns: 40% auto;
+	}
+
+	@media #{$xs, $sm, $md} {
+		grid-template-columns: 1fr;
+	}
+}
+.mobile__app-thumb-wrapper {
+	display: flex;
+	gap: 20px;
+	padding-left: 130px;
+
+	@media #{$xl} {
+		padding-left: 30px;
+	}
+
+	@media #{$lg} {
+		padding-left: 0px;
+	}
+
+	@media #{$xs, $sm, $md,} {
+		padding-left: 0;
+		margin: 0 auto;
+	}
+}
+.mobile__app-wrapper {
+	background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+	padding: 0 40px;
+	@include border-radius(6px);
+	position: relative;
+	z-index: 55;
+
+	@media #{$xs, $sm, $md} {
+		padding: 100px 40px 50px;
+	}
+
+	@media #{$xxs} {
+		padding: 90px 20px 40px;
+	}
+}
+.mobile__app-thumb {
+	max-width: 194px;
+	position: relative;
+	top: -52px;
+
+	&:nth-child(2) {
+		transform: translateY(85px);
+		margin-left: -45px;
+		z-index: -1;
+		max-width: 168px;
+		@media #{$xs, $sm, $md,} {
+			padding-left: 0;
+			margin: 0 auto;
+			transform: translateY(60px);
+		}
+	}
+}
+.mobile__app-content {
+	&>p {
+		margin-bottom: 35px;
+	}
+}
+.mobile__app-download {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	&.is-black {
+		.app__download {
+			background: rgb(6, 6, 6);
+			@include border-radius(6px);
+			padding: 14px 33px;
+			border: 0;
+			&:hover {
+				@include transform(translateY(-3px))
+			}
+		}
+	}
+}
+.app__download {
+	text-align: center;
+	padding: 11px 25px;
+	border: 1.5px solid rgba(255, 255, 255, 0.1);
+	display: block;
+	@include border-radius(6px);
+
+	&:hover {
+		border-color: var(--bd-common-white);
+	}
+}
+// Mobile App style 2
+.mobile-app-bg {
+	position: relative;
+	padding-top: 0;
+	margin: 0 40px;
+	@media #{$xl} {
+		margin: 0 20px;
+	}
+	padding-bottom: 70px;
+	@media #{$xs, $sm ,$md} {
+		margin: 0px;
+		padding-top: 80px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 90%;
+		background: var(--bd-common-white);
+		width: 100%;
+		left: 0;
+		z-index: -1;
+		margin: 0 auto;
+		clip-path: polygon(17.648% 0.065%, 97.98% 15.2%, 97.98% 15.2%, 98.313% 15.331%, 98.627% 15.59%, 98.918% 15.966%, 99.183% 16.447%, 99.417% 17.023%, 99.617% 17.684%, 99.779% 18.418%, 99.899% 19.216%, 99.974% 20.066%, 100% 20.957%, 100% 83.363%, 100% 83.363%, 99.976% 84.216%, 99.907% 85.033%, 99.797% 85.803%, 99.647% 86.517%, 99.462% 87.166%, 99.244% 87.739%, 98.997% 88.227%, 98.724% 88.621%, 98.429% 88.91%, 98.114% 89.085%, 67.508% 99.918%, 67.508% 99.918%, 67.465% 99.932%, 67.422% 99.943%, 67.38% 99.953%, 67.337% 99.96%, 67.294% 99.965%, 67.251% 99.968%, 67.208% 99.968%, 67.165% 99.966%, 67.123% 99.963%, 67.08% 99.956%, 2.033% 88.767%, 2.033% 88.767%, 1.699% 88.64%, 1.383% 88.384%, 1.09% 88.011%, 0.824% 87.531%, 0.588% 86.954%, 0.386% 86.292%, 0.223% 85.556%, 0.102% 84.755%, 0.026% 83.902%, 0% 83.007%, 0% 16.074%, 0% 16.074%, 0.02% 15.292%, 0.078% 14.538%, 0.172% 13.821%, 0.3% 13.148%, 0.459% 12.526%, 0.647% 11.965%, 0.862% 11.471%, 1.101% 11.053%, 1.362% 10.719%, 1.643% 10.477%, 16.963% 0.226%, 16.963% 0.226%, 17.03% 0.184%, 17.098% 0.148%, 17.166% 0.117%, 17.234% 0.092%, 17.303% 0.073%, 17.372% 0.06%, 17.441% 0.053%, 17.51% 0.051%, 17.579% 0.055%, 17.648% 0.065%);
+		top: 53%;
+		transform: translateY(-50%);
+		@media #{$xs, $sm, $md} {
+			clip-path: none;
+			margin: 0px;
+			height: 100%;
+			top: 50%;
+		}
+		@include light {
+			background: rgb(235, 235, 235);
+		}
+	}
+}
+.mobile__app-content-2 {
+	padding-right: 150px;
+	@media #{$xl} {
+		padding-right: 30px;
+	}
+
+	@media #{$xs, $sm, $md, $lg} {
+		padding-right: 0;
+	}
+}
+.mobile__app-thumb-2 {
+	position: relative;
+	max-width: 506px;
+	margin: 0 auto;
+	@media #{$md} {
+		max-width: 450px;
+	}
+	@media #{$sm} {
+		max-width: 400px;
+	}
+
+	@media #{$xs} {
+		max-width: 320px;
+	}
+}
+.mobile__app-content-2 {
+	&>p {
+		margin-bottom: 45px;
+	}
+}
+// Mobile App style 3
+.app__overlay {
+	position: absolute;
+	height: 160px;
+	width: 100%;
+	background: var(--bd-bg-1);
+	top: 0;
+	left: 0;
+	z-index: -1;
+	@include light {
+		background: rgb(249, 249, 249);
+	}
+}
+.mobile__app-wrapper-3 {
+	padding: 85px 95px 90px;
+	@include border-radius(6px);
+	position: relative;
+	z-index: 5;
+	@media #{$xl} {
+		padding: 85px 65px 90px;
+	}
+	@media #{$lg} {
+		padding: 65px 50px 65px;
+	}
+	@media #{$sm, $md} {
+		padding: 60px 35px 60px;
+	}
+	@media #{$xs} {
+		padding: 50px 30px 50px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+		top: 0;
+		left: 0;
+		z-index: -1;
+		@include border-radius(6px);
+		clip-path: polygon(0% 3.254%, 0% 3.254%, 0.011% 2.73%, 0.043% 2.234%, 0.094% 1.773%, 0.163% 1.353%, 0.247% 0.981%, 0.345% 0.664%, 0.455% 0.409%, 0.576% 0.222%, 0.704% 0.11%, 0.84% 0.08%, 99.201% 9.448%, 99.201% 9.448%, 99.331% 9.5%, 99.455% 9.629%, 99.569% 9.826%, 99.674% 10.087%, 99.767% 10.404%, 99.847% 10.772%, 99.911% 11.184%, 99.96% 11.634%, 99.99% 12.115%, 100% 12.621%, 100% 96.825%, 100% 96.825%, 99.989% 97.34%, 99.958% 97.829%, 99.908% 98.284%, 99.842% 98.7%, 99.76% 99.07%, 99.664% 99.387%, 99.557% 99.646%, 99.439% 99.838%, 99.313% 99.958%, 99.18% 100%, 50% 100%, 0.82% 100%, 0.82% 100%, 0.687% 99.958%, 0.561% 99.838%, 0.443% 99.646%, 0.336% 99.387%, 0.24% 99.07%, 0.158% 98.7%, 0.091% 98.284%, 0.042% 97.829%, 0.011% 97.34%, 0% 96.825%, );
+
+		@media #{$xs, $sm} {
+			clip-path: none;
+		}
+	}
+	.app__shape {
+		position: absolute;
+		left: 10%;
+		top: -65px;
+		-webkit-animation: bounce 2s ease infinite;
+		animation: bounce 2s ease infinite;
+	}
+}
+.mobile__app-content-3 {
+	padding-right: 75px;
+
+	@media #{$xs, $sm, $md} {
+		padding-right: 0px;
+	}
+
+	&>p {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,95 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.35 Team css
+/*----------------------------------------*/
+.team__item {
+  padding: 40px 30px 35px;
+  border: 1px solid var(--bd-border-primary);
+  @include border-radius(6px);
+}
+.team__thumb {
+  border-radius: 346px;
+  position: relative;
+  max-width: 282px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  img {
+    border-radius: 346px;
+    filter: grayscale(1);
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    height: calc(100% - 42px);
+    width: 100%;
+    border-radius: 346px;
+    opacity: 0.15;
+    background: linear-gradient(181deg, rgba(5, 157, 255, 0.00) 0%, #089EFF 100%);
+    left: 50%;
+    @extend %translateX1_2;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+.team__contenrt {
+  h3 {
+    font-size: 26px;
+    margin-bottom: 5px;
+    a {
+      &:hover {
+        color: var(--bd-theme-primary);
+      }
+    }
+  }
+  span {
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+}
+.team__carousel {
+  .swiper-slide-next {
+    .team__item {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        width: 50%;
+        height: calc(100% + 20px);
+        z-index: 2;
+        background: linear-gradient(-90deg, #060606 0%, rgba(6, 6, 6, 0) 100%);
+        @include light {
+          background: linear-gradient(
+            -90deg,
+            #fff 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+      }
+    }
+  }
+  .swiper-slide-prev {
+    .team__item {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        width: 50%;
+        height: calc(100% + 20px);
+        z-index: 2;
+        background: linear-gradient(90deg, #060606 0%, rgba(6, 6, 6, 0) 100%);
+        @include light {
+          background: linear-gradient(
+            90deg,
+            #fff 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+        }
+      }
+    }
+  }
+}

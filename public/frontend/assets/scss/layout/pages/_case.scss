@@ -1,0 +1,126 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.6 Case css
+/*----------------------------------------*/
+
+.case__thumb {
+    max-width: 472px;
+    padding: 50px 50px;
+    @include border-radius(6px);
+    background: rgba(255, 255, 255, 0.03);
+    @include light {
+        background: rgb(33, 33, 33);
+    }
+    @media #{$xs, $sm, $md} {
+        max-width: 100%;
+    }
+    @media #{$xxs} {
+        padding: 30px 30px;
+    }
+}
+.case__thumb-wrapper {
+    margin-bottom: 135px;
+    margin-right: 30px;
+    @media #{$xs, $sm, $md} {
+        margin-bottom: 50px;
+        margin-right: 0;
+    }
+    .case__glow {
+        background: #573fea;
+        @include border-radius(50%);
+        width: 185px;
+        height: 185px;
+        filter: blur(200px);
+        position: absolute;
+        top: 168px;
+        left: 35%;
+        z-index: -1;
+        opacity: 50%;
+    }
+}
+.case__cercle {
+    max-width: 290px;
+    padding: 40px 40px;
+    border-radius: 6.294px;
+    background: linear-gradient(90deg, #674AD9 0%, #FB5141 100%);
+    position: absolute;
+    bottom: -135px;
+    right: 0px;
+    @media #{$lg} {
+        max-width: 220px;
+        padding: 30px 30px;
+    }
+    @media #{$xs, $sm, $md} {
+        max-width: 260px;
+        bottom: -50px;
+        right: 40px;
+    }
+    @media #{$xs} {
+        max-width: 180px;
+        padding: 20px 20px;
+    }
+}
+.case__content {
+	padding-left: 50px;
+	padding-right: 52px;
+    @media #{$xxl} {
+        padding-right: 0;
+    }
+    @media #{$xs, $sm, $md, $lg,$xl} {
+        padding: 0;
+    }
+}
+.case__info-item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+    @media #{$xxs} {
+        flex-wrap: wrap;
+    }
+}
+.case__info-text {
+	h4 {
+		margin-bottom: 10px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+.case__info {
+	ul {
+		li {
+			list-style: none;
+            &:nth-child(2) {
+                .case__info-icon {
+                    span {
+                        color: rgba(251, 81, 65, 1);
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .case__info-icon {
+                    span {
+                        color: rgba(103, 74, 217, 1);
+                    }
+                }
+            }
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+		}
+	}
+}
+.case__info-icon {
+	span {
+		width: 84px;
+		height: 84px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--bd-border-primary);
+		@include border-radius(50%);
+		font-size: 35px;
+		color: var(--bd-theme-primary);
+	}
+}

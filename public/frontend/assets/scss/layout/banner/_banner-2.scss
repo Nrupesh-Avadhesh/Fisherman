@@ -1,0 +1,265 @@
+@use '../../utils' as *;
+/*----------------------------------------*/
+/*  3.1 banner Style 1
+/*----------------------------------------*/
+
+// Banner style
+.banner-2 {
+	padding: 65px 0;
+	padding-top: calc(105.5px + 55px);
+	background: var(--bd-bg-1);
+	@media #{$lg} {
+		padding-top: calc(85px + 55px);
+	}
+	@media #{$xs, $sm, $md} {
+		padding-top: calc(85px + 55px);
+	}
+	@media (min-width: 1441px) {
+		.container {
+			max-width: 1430px;
+		}
+	}
+}
+.banner-glow-2 {
+	.glow-1 {
+		background: #573fea;
+		@include border-radius(50%);
+		width: 213px;
+		height: 213px;
+		filter: blur(200px);
+		position: absolute;
+		left: -110px;
+		top: 57%;
+		@extend %translateY1_2;
+	}
+}
+
+.banner__grid-2 {
+	display: grid;
+	grid-template-columns: 50% 44.6%;
+	place-items: center;
+	gap: 50px 30px;
+	justify-content: space-between;
+	@media #{$xs, $sm, $md} {
+		grid-template-columns: 1fr;
+	}
+}
+.banner__content-2 {
+	h2 {
+		font-size: 80px;
+		line-height: 1.15;
+		margin-bottom: 50px;
+		color: var(--bd-common-white);
+		@media #{$xxl} {
+			font-size: 64px;
+			br {
+				display: none;
+			}
+		}
+		@media #{$xl} {
+			font-size: 60px;
+		}
+		@media #{$lg} {
+			font-size: 56px;
+		}
+		@media #{$md} {
+			font-size: 66px;
+			br {
+				display: none;
+			}
+		}
+		@media #{$sm} {
+			font-size: 45px;
+			br {
+				display: none;
+			}
+		}
+		@media #{$xs} {
+			font-size: 40px;
+			br {
+				display: none;
+			}
+		}
+		@media #{$xs} {
+			font-size: 34px;
+			br {
+				display: none;
+			}
+		}
+	}
+}
+.banner__sbutitle-2 {
+	font-size: 14px;
+	font-weight: var(--bd-fw-medium);
+	line-height: 1;
+	display: inline-block;
+	padding: 10px 15px;
+	background: var(--bd-gradient-3);
+	color: var(--bd-gradient-2);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+	border-radius: 4px;
+	letter-spacing: 1.2px;
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: rgb(6, 6, 6);
+		z-index: -1;
+		top: 0;
+		left: 0;
+		border-radius: 6px;
+	}
+}
+.banner__input {
+	position: relative;
+	max-width: 517px;
+	@media #{$xs, $sm, $md} {
+		max-width: 100%;
+	}
+	input {
+		padding-right: 205px;
+		padding-left: 30px;
+		@media #{$xxs} {
+			padding-right: 30px;
+		}
+	}
+	.bd-gradient-btn {
+		position: absolute;
+		top: 6px;
+		right: 6px;
+		height: 58px;
+		@media #{$xxs} {
+			position: relative;
+			top: 20px;
+			right: 0;
+			height: 58px;
+			z-index: 55;
+			width: 100%;
+		}
+	}
+}
+.banner__thumb-wrapper-2 {
+	width: 100%;
+	.banner-round {
+		display: inline-block;
+		width: 470px;
+		height: 470px;
+		background: #0E0A24;
+		@include border-radius(50%);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		border: 1px solid rgba(179, 179, 179, 0.21);
+		@extend %translate1_2;
+		@media #{$lg} {
+			width: 450px;
+			height: 450px;
+		}
+		@media #{$xs} {
+			width: 400px;
+			height: 400px;
+		}
+		@media #{$xxs} {
+			width: 300px;
+			height: 300px;
+		}
+	}
+	.banner__blur {
+		display: inline-block;
+		width: 470px;
+		height: 470px;
+		background: linear-gradient(90deg, #573FEA 0%, #FB5141 100%);
+		filter: blur(150px);
+		@include border-radius(50%);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		opacity: 40%;
+		@extend %translate1_2;
+		@media #{$lg} {
+			width: 450px;
+			height: 450px;
+		}
+		@media #{$xs} {
+			width: 400px;
+			height: 400px;
+		}
+		@media #{$xxs} {
+			width: 300px;
+			height: 300px;
+		}
+	}
+}
+.banner__thumb-2 {
+	max-width: 364px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 55;
+	@media #{$md, $xxl} {
+		max-width: 280px;
+	}
+	@media #{$xl} {
+		max-width: 260px;
+	}
+	@media #{$lg} {
+		max-width: 240px;
+	}
+	@media #{$sm} {
+		max-width: 260px;
+	}
+	@media #{$xs} {
+		max-width: 200px;
+	}
+}
+.banner__card {
+	display: inline-block;
+	padding: 13px 50px 13px 20px;
+	position: absolute;
+	top: 33%;
+	left: 0;
+	z-index: 55;
+	@media #{$xs, $sm} {
+	left: 15px;
+	}
+	&::after {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background: var(--bd-common-white);
+		z-index: -1;
+		border-radius: 4px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, #FB5141 0%, #089EFF 100%);
+		border-radius: 4px;
+		top: 10px;
+		left: 10px;
+		z-index: -1;
+	}
+}
+.banner__card-info {
+	span {
+		margin-bottom: 5px;
+		display: block;
+	}
+	h2 {
+		color: var(--bd-border-secondary);
+		font-weight: var(--bd-fw-bold);
+		line-height: 1;
+		display: inline-flex;
+		@media #{$xs, $sm} {
+			font-size: 36px;
+		}
+	}
+}

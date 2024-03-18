@@ -1,0 +1,124 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.1 Footer Style 1
+/*----------------------------------------*/
+
+// Footer Widget 1
+.footer__widget-1-1 {
+	max-width: 350px;
+	@media #{$xs, $sm, $md} {
+		max-width: 100%;
+	}
+}
+.footer__widget-1-2 {
+    padding-left: -30px;
+	@media #{$xs, $sm, $md} {
+		padding-left: 0px;
+	}
+}
+.footer__widget-1-3 {
+	padding-left: 10px;
+	@media #{$xs, $sm, $md} {
+		padding-left: 0px;
+	}
+}
+.footer__widget-1-5 {
+	display: grid;
+}
+
+// Footer style 1
+.footer__glow {
+    .footer__glow-1 {
+        width: 260px;
+        height: 260px;
+        border-radius: 260px;
+        background: var(--bd-theme-primary);
+        filter: blur(200px);
+        position: absolute;
+        bottom: -55px;
+        left: calc(100% - 136px);
+    }
+    .footer__glow-2 {
+		width: 260px;
+		height: 260px;
+		background: var(--bd-theme-secondary);
+		filter: blur(200px);
+		position: absolute;
+		left: -128px;
+		bottom: 32%;
+    }
+}
+.footer__main-1 {
+	padding-top: 240px;
+	padding-bottom: 80px;
+}
+.footer__app-item {
+	text-align: center;
+	padding: 10px 20px;
+	border: 1px solid var(--bd-border-primary);
+	max-width: 152px;
+	display: block;
+	@include border-radius(4px);
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+	img {
+		max-width: 110px;
+	}
+	&:hover {
+		background: #ffffff12;
+		border-color: transparent;
+		@include light {
+			border: 1px solid var(--bd-bg-1);
+		}
+	}
+}
+
+// Footer contact
+.footer__contact-info-item {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	&:nth-child(2) {
+		.footer__contact-info-icon {
+			span {
+				background:rgba(251, 81, 65, 1);
+			}
+		}
+	}
+	&:nth-child(3) {
+		.footer__contact-info-icon {
+			span {
+				background: rgba(103, 74, 217, 1);
+			}
+		}
+	}
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+.footer__contact-info-icon {
+	span {
+		height: 40px;
+		width: 40px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bd-theme-primary);
+		color: var(--bd-common-white);
+		@include border-radius(50%);
+		font-size: 18px;
+	}
+}
+.footer__contact-info-content {
+	p {
+		margin-bottom: 0;
+		font-weight: 500;
+        a {
+            &:hover {
+                color: var(--bd-theme-primary);
+            }
+        }
+	}
+}

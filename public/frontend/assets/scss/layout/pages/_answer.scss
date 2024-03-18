@@ -1,0 +1,145 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.3 Answer css
+/*----------------------------------------*/
+
+.answer__content {
+	padding-right: 70px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-right: 0px;
+	}
+	@media #{$xl} {
+		padding-right: 30px;
+	}
+	> P {
+		margin-bottom: 0;
+	}
+}
+.answer__icon {
+	margin-bottom: calc(13px + 20px);
+	span {
+		height: 77px;
+		width: 77px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 56;
+		&:after {
+			position: absolute;
+			content: "";
+			height: 100%;
+			width: 100%;
+			background: linear-gradient(to bottom, rgba(251, 83, 67, 0.15) 60%, rgba(5, 157, 255, 0.15) 100%);
+			@include border-radius(50%);
+			background-position: 100% 100%;
+			background-size: 300% 100%;
+			z-index: -1;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			height: calc(100% + 13px);
+			width: calc(100% + 13px);
+			z-index: -1;
+			background: linear-gradient(to bottom, rgb(251, 83, 67) 60%, rgb(5, 157, 255) 100%);
+			@include border-radius(50%);
+			background-position: 100% 100%;
+			background-size: 300% 100%;
+			opacity: 0.15;
+		}
+	}
+}
+.answer__reply-user {
+	span {
+		max-width: 96px;
+		display: block;
+		img {
+			@include border-radius(50%);
+		}
+	}
+}
+.answer__reply-item {
+	display: flex;
+	gap: 20px 30px;
+	padding: 70px 70px;
+	position: relative;
+    z-index: 5;
+	@media #{$xs, $sm, $md, $lg} {
+		padding: 40px 40px;
+	}
+	@media #{$xxs} {
+		padding: 35px 30px;
+		flex-wrap: wrap;
+	}
+	&:before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background-color: var(--bd-bg-1);
+		@include border-radius(6px);
+		top: 0;
+		left: 0;
+        z-index: -1;
+	}
+}
+.answer__reply-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	span {
+		color: rgba(255, 255, 255, 0.69);
+		@include light {
+			color: var(--bd-text-body);
+		}
+	}
+}
+.answer__reply-content {
+	border-radius: 5px;
+	background: var(--bd-gradient-2);
+	padding: 35px 35px;
+	@media #{$xxs} {
+		padding: 25px 25px;
+	}
+}
+.answer__reply-text {
+	p {
+		color: var(--bd-common-white);
+	}
+}
+.answer__reply-btn {
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: underline;
+	&:hover {
+		color: var(--bd-text-secondary);
+	}
+}
+.answer__typing {
+    position: relative;
+    display: inline-flex;
+    justify-content: end;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+	@include light {
+		border-color: rgba(0, 0, 0, 0.2);
+	}
+    padding: 10px 14px;
+    border-radius: 30px;
+    gap: 5px;
+    span {
+        display: inline-block;
+        height: 7px;
+        width: 7px;
+        background-color: var(--bd-common-white);
+        @include border-radius(50%);
+		@include light {
+			background: var(--bd-text-body);
+		}
+    }    
+}

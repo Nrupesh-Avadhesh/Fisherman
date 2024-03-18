@@ -1,0 +1,47 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.37 Trade CSS
+/*----------------------------------------*/
+
+.trade__glow {
+	.glow-1 {
+		background: #573fea;
+		@include border-radius(50%);
+		width: 235px;
+		height: 235px;
+		filter: blur(200px);
+		position: absolute;
+		top: -145px;
+		left: -127px;
+	}
+	.glow-2 {
+		background: linear-gradient(-90deg, rgb(101, 73, 213) 0%, rgb(251, 83, 67) 100%);
+		@include border-radius(50%);
+		width: 241px;
+		height: 241px;
+		position: absolute;
+		right: -138px;
+		top: 26px;
+		filter: blur(200px);
+	}
+}
+.trade__thumb-wrapper {
+	padding: 0 35px;
+  @media #{$xs, $sm, $md, $lg} {
+    padding: 0;
+  }
+}
+.trade__thumb {
+	background: var(--bd-gradient-2);
+	@include border-radius(6px);
+}
+.trade__content {
+	padding: 0 50px;
+  @media #{$xs, $sm, $md, $lg} {
+    padding: 0;
+  }
+  @media #{$xl} {
+    padding: 0 20px;
+  }
+}

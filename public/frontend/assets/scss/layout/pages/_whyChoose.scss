@@ -1,0 +1,274 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.42 Why Choose CSS
+/*----------------------------------------*/
+
+.why__choose-item {
+	border: 1px solid rgba(101, 73, 213, 0.2);
+	text-align: center;
+	padding: 40px 40px;
+	@include border-radius(6px);
+	position: relative;
+	@extend %bd-transition;
+	@media #{$xxs, $lg} {
+		padding: 40px 20px;
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(180deg, #5840BC 0%, rgba(251, 83, 67, 0) 100%);
+		top: 0;
+		left: 0;
+		opacity: 0;
+		@extend %bd-transition;
+		@include border-radius(6px);
+	}
+	&.is-brick-red {
+		border-color: rgba(251, 83, 67, 0.2);
+		&::before {
+			background: linear-gradient(180deg, #FB5141 0%, rgba(251, 83, 67, 0.00) 100%);
+		}
+
+		.why__choose-icon {
+			span {
+				background: rgba(251, 83, 67, 0.15);
+
+				&::before {
+					background: rgb(251, 83, 67, 0.10);
+				}
+			}
+		}
+	}
+	&.is-mainly-blue {
+		border-color: rgba(5, 157, 255, 0.2);
+		&::before {
+			background: linear-gradient(180deg, #089EFF 0%, rgba(251, 83, 67, 0.00) 100%);
+		}
+		.why__choose-icon {
+			span {
+				background: rgba(5, 157, 255, 0.15);
+
+				&::before {
+					background: rgba(5, 157, 255, 0.10);
+				}
+			}
+		}
+	}
+	&:hover {
+		border-color: transparent;
+		&::before {
+			opacity: 0.119;
+			visibility: visible;
+		}
+	}
+}
+.why__choose-icon {
+	span {
+		height: 86px;
+		width: 86px;
+		display: inline-block;
+		text-align: center;
+		line-height: 86px;
+		background: rgb(101, 73, 213, 0.15);
+		@include border-radius(50%);
+		margin-bottom: 25px;
+		position: relative;
+		z-index: 5;
+		img {
+			max-width: 44px;
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			height: 100px;
+			width: 100px;
+			background: rgb(101, 73, 213, 0.10);
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+			@include border-radius(50%);
+		}
+	}
+	h3 {
+		margin-bottom: 20px;
+		@media #{$xxs, $lg} {
+			font-size: 20px;
+		}
+		a {
+			&:hover {
+				color: var(--bd-theme-primary);
+			}
+		}
+	}
+}
+.why-choose__content {
+	&>p {
+		margin-bottom: 0;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+// Why style
+.why__item {
+	padding: 0px 30px;
+	@media #{$xxs, $sm, $md, $lg} {
+		padding: 0px;
+	}
+	&.is-brick-red {
+		.why__icon {
+			span {
+				background: rgba(251, 83, 67, 0.150);
+			}
+		}
+		&:hover {
+			.why__icon {
+				span {
+					background: var(--bd-theme-secondary);
+				}
+			}
+		}
+	}
+
+	&.is-mainly-blue {
+		.why__icon {
+			span {
+				background: rgba(101, 73, 213, 0.150);
+			}
+		}
+		&:hover {
+			.why__icon {
+				span {
+					background: var(--bd-theme-tertiary);
+				}
+			}
+		}
+	}
+	&:hover {
+		.why__icon {
+			span {
+				background: var(--bd-theme-primary);
+				color: var(--bd-common-white);
+				svg * {
+					fill: var(--bd-common-white);
+				}
+			}
+		}
+	}
+}
+.why__icon {
+	margin-bottom: 25px;
+	span {
+		width: 94px;
+		height: 94px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(5, 157, 255, 0.150);
+		@include border-radius(50%);
+	}
+}
+.why__content {
+	h3 {
+		margin-bottom: 20px;
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+// Why style 3
+.why__item-2 {
+	padding: 40px 40px;
+	background: var(--bd-bg-5);
+	@include border-radius(6px);
+	@extend %bd-transition;
+	@media #{$xxs} {
+		padding: 30px 30px;
+	}
+	@include light {
+		background: var(--bd-bg-5);
+	}
+	@media #{$xl} {
+		padding: 40px 30px;
+	}
+	@media #{$lg} {
+		padding: 30px 30px;
+	}
+	&.is-mainly-red {
+		.why__icon-2 {
+			span {
+				background: rgba(251, 83, 67, 0.150);
+			}
+		}
+	}
+	&.is-mainly-blue {
+		.why__icon-2 {
+			span {
+				background: rgba(101, 73, 213, 0.150);
+			}
+		}
+	}
+	&:hover {
+		background-color: rgba(5, 157, 255, 0.10);
+		&.is-mainly-red {
+			background: rgba(251, 83, 67, 0.10);
+		}
+		&.is-mainly-blue {
+			background: rgba(101, 73, 213, 0.10);
+		}
+	}
+}
+.why__icon-2 {
+	margin-bottom: 20px;
+
+	span {
+		width: 94px;
+		height: 94px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(5, 157, 255, 0.15);
+		@include border-radius(50%);
+	}
+}
+.why__content-2 {
+	h3 {
+		margin-bottom: 20px;
+		@media #{$lg} {
+			font-size: 18px;
+		}
+		@media #{$xs} {
+			font-size: 20px;
+		}
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+.common__navigation {
+	display: flex;
+	align-items: center;
+	gap: 30px;
+	justify-content: center;
+}
+.common__slider-button-next,
+.common__slider-button-prev {
+	width: 60px;
+	height: 60px;
+	display: inline-flex;
+	align-items: center;
+	border: 1px solid var(--bd-border-primary);
+	justify-content: center;
+	@include border-radius(50%);
+	color: var(--bd-text-primary);
+	font-size: 20px;
+	&:hover {
+		background-color: var(--bd-theme-primary);
+		color: var(--bd-common-white);
+		border-color: transparent;
+	}
+}

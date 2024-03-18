@@ -1,0 +1,82 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.34 Support css
+/*----------------------------------------*/
+
+.support__wrapper {
+	padding-right: 75px;
+    @media #{$xs, $sm, $md, $lg, $xl}  {
+        padding-right: 0px;
+	}
+}
+// Suppoer style 2
+.support__info-list {
+	border-radius: 50px;
+	background: rgba(5, 157, 255, 0.10);
+	display: inline-flex;
+	padding: 4px 15px;
+	span {
+		color: #FB5141;
+		font-size: 18px;
+		letter-spacing: -0.2px;
+	}
+}
+.support__info {
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px 20px;
+		li {
+			list-style: none;
+            &:nth-child(2) {
+                .support__info-list {
+                    background: rgba(101, 73, 213, 0.10);
+                    span {
+                        color: rgba(103, 74, 217, 1);
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .support__info-list {
+                    background: rgba(251, 83, 67, 0.10);
+                    span {
+                        color: rgba(251, 81, 65, 1);
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .support__info-list {
+                    background: rgba(227, 63, 161, 0.10);
+                    span {
+                        color: rgba(229, 64, 163, 1);
+                    }
+                }
+            }
+		}
+	}
+}
+.support__content-2 {
+    padding-right: 90px;
+    @media #{$xl} {
+        padding-right: 30px;
+    }
+    @media #{$xs, $sm, $md, $lg} {
+        padding-right: 0px;
+    }
+	& > p {
+		margin-bottom: 25px;
+	}
+}
+.support__thumb-2 {
+	padding: 30px 30px;
+	background: rgba(217, 217, 217, 0.05);
+	border-radius: 22px;
+    @media #{$xxs} {
+        padding: 20px 20px;
+        @include border-radius(6px);
+    }
+    img {
+        @include border-radius(6px);
+    }
+}

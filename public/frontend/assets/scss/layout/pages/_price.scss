@@ -1,0 +1,127 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.28 Price css
+/*----------------------------------------*/
+
+.price__item {
+	padding: 40px 40px 40px;
+	border: 1px solid var(--bd-border-primary);
+	@include border-radius(6px);
+    position: relative;
+    z-index: 5;
+    @media #{$xl} {
+        padding: 35px 30px 35px;
+    }
+    @media #{$xxs, $lg} {
+        padding: 30px 30px 30px;
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include border-radius(6px);
+        background: linear-gradient(35deg, #FB5141 0%, #089EFF 100%);
+        z-index: -1;
+        opacity: 0;
+        @extend %bd-transition;
+    }
+    &.is-mainly-red {
+        .price__title {
+            h4 {
+                color: rgba(251, 81, 65, 1);
+            }
+        }
+    }
+    .bd-gradient-btn {
+        &::after {
+            top: 2px;
+            bottom: 2px;
+            left: 2px;
+            right: 2px;
+            background-color: var(--bd-bg-1);
+            z-index: -1;
+            opacity: 1;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+    &.is-active {
+        border-color: transparent;
+        .price__value {
+            sub {
+                color: var(--bd-common-white);
+            }
+        }
+        .price__top {
+            & > p {
+                color: var(--bd-common-white);
+            }
+        }
+        .info__list {
+            ul {
+                li {
+                    color: var(--bd-common-white);
+                }
+            }
+        }
+        .price__title {
+            h4 {
+                color: var(--bd-common-white);
+            }
+        }
+        .info__list {
+            ul {
+                li {
+                    &::after {
+                        background: url(../imgs/icons/check-white.png);
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+        .price__value strong {
+            color: var(--bd-common-white);
+        }
+        &::before {
+            opacity: 1;
+        }
+    }
+}
+.price__title {
+	h4 {
+        color: var(--bd-theme-primary);
+        display: inline-block;
+        margin-bottom: 25px
+	}
+    .badge__card {
+        margin-left: 3px;
+    }
+}
+.price__value {
+	margin-bottom: 25px;
+	strong {
+		font-size: 44px;
+		color: var(--bd-common-white);
+		line-height: 1;
+        @include light {
+            color: var(--bd-common-black);
+        }
+        @media #{$xxs} {
+            font-size: 35px
+        }
+	}
+	sub {
+		font-size: 16px;
+		color: var(--bd-text-body);
+	}
+}
+.price__top {
+	& > p {
+		border-bottom: 1px solid var(--bd-border-primary);
+		padding-bottom: 25px;
+		margin-bottom: 25px;
+	}
+}

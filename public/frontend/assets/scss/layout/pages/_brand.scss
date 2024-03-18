@@ -1,0 +1,182 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.5 Brand css
+/*----------------------------------------*/
+
+// Brand style
+.brand__inner {
+	padding: 60px 0;
+	border-top: 1px solid var(--bd-border-primary);
+	border-bottom: 1px solid var(--bd-border-primary);
+	.container {
+		max-width: 1392px;
+	}
+}
+.brand__thumb {
+	img {
+		height: auto;
+		width: auto;
+		opacity: 20%;
+		@include light {
+			-webkit-filter: invert(100%);
+			filter: invert(100%);
+		}
+	}
+	&:hover {
+		img {
+			opacity: 1;
+		}
+	}
+}
+.brnad__active {
+	position: relative;
+	&::after {
+		position: absolute;
+		content: "";
+		top: 50%;
+		left: 0;
+		background: linear-gradient(90deg, #0E0A24 0%, rgba(14, 10, 36, 0) 100%);
+		width: 250px;
+		height: 110px;
+		@extend %translateY1_2;
+		z-index: 2;
+		@include light {
+			background: linear-gradient(90deg, rgb(249, 249, 249) 0%, rgba(14, 10, 36, 0) 100%)
+		}
+		@media #{$xs, $sm, $md} {
+			display: none;
+		}
+	}
+	&::before {
+		position: absolute;
+		content: "";
+		top: 50%;
+		right: 0;
+		width: 250px;
+		height: 110px;
+		@extend %translateY1_2;
+		background: linear-gradient(270deg, #0E0A24 0%, rgba(14, 10, 36, 0.00) 100%);
+		@include light {
+			background:linear-gradient(220deg, rgb(249, 249, 249) 0%, rgba(14, 10, 36, 0) 100%)
+		}
+		z-index: 2;
+		@media #{$xs, $sm, $md} {
+			display: none;
+		}
+	}
+	.swiper-wrapper {
+		align-items: center;
+	}
+}
+// Brand inner 2
+.brand__inner {
+	&.style-2 {
+		.brnad__active {
+			&::after,&::before {
+				display: none;
+			}
+		}
+	}
+}
+// Brand style 2
+.brand__area-2 {
+	@media (min-width: 1400px) {
+		.container {
+			max-width: 1390px;
+		}
+	}
+}
+// Brand style 3
+.brand__area-3 {
+	.brnad__active {
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			background: linear-gradient(90deg, #121212 0%, rgba(18, 18, 18, 0.00) 100%);
+			width: 250px;
+			height: 110px;
+			z-index: 2;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			right: 0;
+			width: 250px;
+			height: 110px;
+			background: linear-gradient(270deg, #121212 0%, rgba(18, 18, 18, 0.00) 100%);
+			z-index: 2;
+		}
+	}
+}
+// Brand style 4
+.brand__area-4 {
+	.container {
+		max-width: 1390px;
+	}
+	background-color: var(--bd-bg-3);
+	@include light {
+		background-color: var(--bd-bg-1);
+		border-top: 1px solid var(--bd-border-secondary);
+	}
+	.brnad__active {
+		&::after,&::before {
+			display: none;
+		}
+	}
+}
+// Brand style 5
+.brand__area-5 {
+	& .container {
+		max-width: 1590px;
+	}
+	.brnad__active {
+		&::after {
+			position: absolute;
+			content: "";
+			top: 50%;
+			left: 0;
+			background: linear-gradient(90deg, #131313  0%, rgba(18, 18, 18, 0.00) 100%);
+			@include light {
+				background: linear-gradient(90deg, #F3F3F3 0%, rgba(18, 18, 18, 0.00) 100%);
+			}
+			width: 250px;
+			height: 110px;
+			z-index: 2;
+		}
+		&::before {
+			position: absolute;
+			content: "";
+			top: 50%;
+			right: 0;
+			width: 250px;
+			height: 110px;
+			background: linear-gradient(220deg, #131313 0%, rgba(14, 10, 36, 0) 100%);
+			@include light {
+				background: linear-gradient(220deg, #F3F3F3 0%, rgba(14, 10, 36, 0) 100%);
+			}
+			z-index: 2;
+		}
+	}
+}
+// Brand style 6
+.brand__area-6 {
+	.container {
+		max-width: 1590px;
+	}
+	.brnad__active {
+		&::before {
+			@include light {
+				background: linear-gradient(220deg, #F9F9F9 0%, rgba(14, 10, 36, 0) 100%);
+			}
+		}
+		&::after {
+			@include light {
+				background: linear-gradient(90deg, rgb(249, 249, 249) 0%, rgba(14, 10, 36, 0) 100%);
+			}
+		}
+	}
+}

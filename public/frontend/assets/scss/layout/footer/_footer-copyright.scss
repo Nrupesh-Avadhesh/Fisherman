@@ -1,0 +1,19 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.6 Copyright Style 1
+/*----------------------------------------*/
+
+// Footer copyright style
+.footer__copyright {
+	p {
+		margin-bottom: 0;
+		color: var(--bd-text-1);
+		a {
+			color: var(--bd-text-primary);
+			&:hover {
+				color: var(--bd-theme-primary);
+			}
+		}
+	}
+}

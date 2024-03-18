@@ -1,0 +1,102 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.33 Subcribe css
+/*----------------------------------------*/
+
+.subcribe__input {
+    position: relative;
+    border-radius: 50px;
+	& > span {
+        position: absolute;
+        left: 10px;
+        top: 12px;
+        width: 48px;
+        height: 47px;
+        background: linear-gradient(90deg, rgba(101, 73, 213, 0.1) 0%, rgba(251, 83, 67, 0.1) 100%);
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+		i {
+			background: linear-gradient(90deg, #FB5141 0%, #089EFF 100%);
+			background-clip: border-box;
+			background-clip: text;
+			background-clip: border-box;
+			background-clip: border-box;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	}
+	input {
+		background: var(--bd-common-white);
+		color: var(--bd-text-body);
+		padding-left: 70px;
+		padding-right: 210px;
+		@include light {
+			background: rgba(14, 10, 36, 0.07);
+		}
+		@media #{$xs,sm} {
+			padding-left: 70px;
+			padding-right: 20px;
+		}
+	}
+	.bd-gradient-btn {
+        position: absolute;
+        top: 50%;
+        @extend %translateY1_2;
+        right: 6px;
+		@media #{$xs, $sm} {
+			position: inherit;
+			top: inherit;
+			transform: inherit;	
+			margin-top: 20px;
+			width: 100%;
+		}
+	}
+}
+.subcribe__soacial {
+	span {
+		height: 78px;
+		width: 78px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bd-bg-5);
+		border-radius: 50px;
+		position: absolute;
+	}
+}
+.social__icon-1 {
+	bottom: 35px;
+	left: 55px;
+	transform: rotate(30deg);
+	img {
+		max-width: 41.11px;
+	}
+}
+.social__icon-2 {
+	top: 40px;
+	left: 15%;
+	transform: rotate(-21deg);
+	img {
+		max-width: 31px;
+	}
+}
+.social__icon-3 {
+	top: 70px;
+	right: 11%;
+	transform: rotate(22deg);
+	img {
+		max-width: 32.93px;
+	}
+}
+.social__icon-4 {
+	bottom: 20px;
+	right: 30px;
+	transform: rotate(26deg);
+	img {
+		max-width: 48px;
+	}
+}

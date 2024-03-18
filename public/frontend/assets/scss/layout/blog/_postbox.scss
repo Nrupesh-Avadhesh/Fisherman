@@ -1,0 +1,302 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  5.2 Postbox css
+/*----------------------------------------*/
+
+// Postbog meta
+.postbox__meta {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  span {
+    position: relative;
+    a {
+      font-size: 16px;
+      &:hover {
+        color: var(--bd-theme-primary);
+      }
+    }
+    &:not(:first-child) {
+      &:before {
+        position: absolute;
+        content: "";
+        height: 5px;
+        width: 5px;
+        background: #626262;
+        top: 50%;
+        @extend %translateY1_2;
+        left: -16px;
+        @include border-radius(50%);
+        @extend %bd-transition;
+      }
+    }
+  }
+}
+
+// Postbox style css
+.postbox__wrapper {
+  @media #{$xs, $sm, $md, $lg} {
+    padding-left: 0;
+  }
+}
+.postbox__text {
+  p {
+    margin-bottom: 0;
+  }
+}
+.postbox__thumb {
+  img {
+    mix-blend-mode: luminosity;
+  }
+}
+.postbox__title {
+  h3 {
+    font-size: 28px;
+    @media #{$xs} {
+      font-size: 24px;
+    }
+    @media #{$xxs} {
+      font-size: 20px;
+    }
+  }
+}
+
+// Postbox list
+.postbox__list {
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding-left: 15px;
+      font-size: 18px;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        height: 5px;
+        width: 5px;
+        background: var(--bd-theme-primary);
+        left: 0;
+        top: 50%;
+        @extend %translateY1_2;
+      }
+    }
+  }
+}
+// Postbox quote
+.postbox__quote {
+  padding: 30px 35px 25px;
+  background: var(--bd-bg-6);
+  @include light {
+    background: var(--bd-bg-9);
+  }
+  @media #{$xxs} {
+    padding: 30px 25px 25px;
+  }
+}
+.postbox__quote-cite {
+  cite {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--bd-theme-primary);
+    position: relative;
+    padding-left: 50px;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: 40px;
+      background: var(--bd-text-body);
+      left: 0;
+      top: 50%;
+      @extend %translateY1_2;
+      display: flex;
+    }
+  }
+}
+.postbox__quote-content {
+  p {
+    font-size: 24px;
+    line-height: 1.5;
+    position: relative;
+    top: -30px;
+    padding-left: 90px;
+    margin-bottom: 0;
+    @media #{$xs,$sm} {
+      padding-left: 0;
+    }
+    @media #{$xxs} {
+      font-size: 24px;
+    }
+  }
+}
+// Postbox author
+.postbox__author {
+  gap: 30px 25px;
+  padding: 30px 30px;
+  background: rgba(255, 255, 255, 0.06);
+  @include light {
+    background: var(--bd-bg-9)
+  }
+  @media #{$xs, $sm} {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+}
+.postbox__author-thumb {
+  a {
+    display: block;
+  }
+  img {
+    @include border-radius(50%);
+    width: 130px;
+  }
+}
+.postbox__author-title {
+  margin-bottom: 15px;
+}
+.postbox__author-content {
+  P {
+    margin-bottom: 0;
+  }
+}
+
+// Postbox navigation
+.postbox__more-navigation {
+  border-top: 1px solid var(--bd-border-primary);
+  border-bottom: 1px solid var(--bd-border-primary);
+  padding: 30px 0;
+  position: relative;
+  gap: 30px 30px;
+  @media #{$xs} {
+    flex-wrap: wrap;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    height: 50%;
+    width: 1px;
+    background: var(--bd-border-primary);
+    left: 50%;
+    transform: translate(50%, -50%);
+    top: 50%;
+    @media #{$xs} {
+      display: none;
+    }
+  }
+}
+.postbox__more-text {
+  p {
+    margin-bottom: 0;
+  }
+  span {
+    text-transform: uppercase;
+    color: var(--bd-common-white);
+    @include light {
+      color: var(--bd-common-black);
+    }
+  }
+  a {
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--bd-common-white);
+    @include light {
+      color: var(--bd-common-black);
+    }
+    &:hover {
+      color: var(--bd-theme-primary);
+      span {
+        color: var(--bd-theme-primary);
+      }
+    }
+  }
+}
+.postbox__more-content {
+  & > p {
+    margin-bottom: 0;
+    max-width: 260px;
+    font-weight: 500;
+    @media #{$xs} {
+      max-width: 100%;
+    }
+    &:hover {
+      color: var(--bd-theme-primary);
+    }
+  }
+}
+
+// Postbox blockquote
+blockquote {
+  background: var(--bd-grey-1);
+  padding: 35px 50px;
+  margin-bottom: 35px;
+  @media #{$xs} {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  & p {
+    line-height: 1.5;
+    font-size: 20px;
+    color: #57565e;
+    font-weight: 400;
+  }
+  & cite {
+    font-size: 18px;
+    display: block;
+    margin-top: 10px;
+    color: #070337;
+    font-style: inherit;
+    font-weight: 600;
+    position: relative;
+
+    &::before {
+      content: "";
+      font-size: 28px;
+      color: var(--bd-theme-primary);
+      padding-bottom: 0px;
+      display: inline-block;
+      background: var(--bd-theme-primary);
+      height: 2px;
+      width: 40px;
+      font-weight: 400;
+      text-align: center;
+      top: -4px;
+      margin-right: 10px;
+      position: relative;
+    }
+  }
+}
+
+// Tagcloud css start
+.postbox__tag {
+  padding-top: 30px;
+  border-top: 1px solid var(--bd-border-primary);
+}
+.tagcloud {
+  a {
+    height: 42px;
+    padding: 0 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--bd-text-body);
+    border: 1px solid var(--bd-border-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-right: 5px;
+    &:hover {
+      color: var(--bd-common-white);
+      background-color: var(--bd-theme-primary);
+      border-color: transparent;
+    }
+  }
+}

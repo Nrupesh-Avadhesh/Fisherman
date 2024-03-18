@@ -1,0 +1,67 @@
+@use "../utils" as *;
+
+/*----------------------------------------*/
+/*  2.4 Background
+/*----------------------------------------*/
+
+.white-bg {
+  background-color: var(--bd-common-white);
+}
+.black-bg {
+  background-color: var(--bd-common-black);
+}
+.footer-bg {
+  background-color: var(--bd-bg-1);
+  @include light {
+    background-color: var(--bd-bg-2);
+  }
+}
+
+// Theme bg
+.theme-bg-1 {
+  background-color: var(--bd-bg-1);
+}
+.theme-bg-2 {
+  background-color: var(--bd-bg-2);
+}
+.theme-bg-3 {
+  background-color: var(--bd-bg-3);
+}
+.theme-bg-4 {
+  background-color: var(--bd-bg-4);
+}
+.theme-bg-5 {
+  background-color: var(--bd-bg-5);
+}
+.theme-bg-6 {
+  background-color: var(--bd-bg-6);
+}
+.theme-bg-7 {
+  background-color: var(--bd-bg-7);
+}
+.theme-bg-8 {
+  background-color: var(--bd-bg-8);
+}
+.theme-bg-9 {
+  background-color: var(--bd-bg-9);
+}
+.theme-bg-10 {
+  background-color: var(--bd-bg-10);
+}
+.midnight-blue {
+  background-color: rgba(14, 10, 36, 1);
+}
+
+// Gradient color
+.bg-gradient-1 {
+  background: linear-gradient(90deg, #674AD9 0%, #FB5141 50.52%, #089EFF 100%);
+}
+.bg-gradient-2 {
+  background: var(--btn-gradient, linear-gradient(90deg, #674AD9 0%, #FB5141 100%));
+}
+.bg-gradient-3 {
+  background: linear-gradient(135deg, #FB5141 0%, #089EFF 100%);
+}
+.bg-gradient-4 {
+	background: linear-gradient(360deg, rgba(5, 157, 255, 0.15) 0%, rgba(5, 157, 255, 0.00) 100%);
+}

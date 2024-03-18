@@ -1,0 +1,127 @@
+@use "../../utils" as *;
+
+/*----------------------------------------*/
+/*  7.45 Privacy Policy css
+/*----------------------------------------*/
+
+// Tebs Nav Boxed - Start
+.tabs__nav-boxed {
+	padding: 20px;
+	border: 1px solid var(--bd-border-primary);
+	@include border-radius(6px);
+}
+.tabs__nav-boxed-inner {
+	padding: 20px 20px;
+	background: var(--bd-bg-6);
+	display: flex;
+	flex-direction: column;
+	>li {
+		display: block;
+		&:not(:last-child) {
+			padding-bottom: 20px;
+			border-bottom: 1px solid rgba(182, 182, 182, 0.2);
+			margin-bottom: 20px;
+		}
+	}
+	button {
+		display: flex;
+		font-size: 16px;
+		font-weight: 600;
+		width: 100%;
+		position: relative;
+		text-transform: uppercase;
+		&.active {
+			.policy__tab-content {
+				span {
+					color: var(--bd-theme-primary);
+					img {
+						opacity: 1;
+						visibility: visible;
+					}
+				}
+			}
+		}
+	}
+}
+.policy__tab-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	gap: 5px;
+	span {
+		img {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+// Terms Conditions Start
+.terms__conditions-content {
+	padding: 40px 40px;
+	border: 1px solid var(--bd-border-primary);
+	@include border-radius(6px);
+	@media #{$xs,$sm} {
+		padding: 30px 30px;
+	}
+	@media #{$xxs} {
+		padding: 20px 20px;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+	.privacy__item {
+		&:not(:last-child) {
+			margin-bottom: 50px;
+		}
+	}
+	.info__title {
+		margin-bottom: 20px;
+		@media #{$xs,$sm} {
+			font-size: 26px;
+		}
+	}
+	.icon__list {
+		list-style: none;
+		li {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+			display: flex;
+			strong {
+				color: var(--bd-text-primary);
+				font-weight: 500;
+			}
+		}
+	}
+	.icon__list.unordered_list_block > li:not(:last-child) {
+		margin-bottom: 14px;
+	}
+	.icon__list .list__item-text {
+		font-weight: 500;
+	}
+	.icon__list .list_item_icon {
+		flex: none;
+		width: auto;
+		height: auto;
+		font-size: 5px;
+		border-radius: 0;
+		margin-inline-end: 10px;
+		background-color: transparent;
+	}
+	.link {
+		font-size: 16px;
+		color: var(--bd-theme-primary);
+		text-decoration: underline;
+		font-weight: 500;
+	}
+	.author_mail {
+		font-size: 21px;
+		font-weight: 700;
+		line-height: 29px;
+		color: var(--bd-theme-primary);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

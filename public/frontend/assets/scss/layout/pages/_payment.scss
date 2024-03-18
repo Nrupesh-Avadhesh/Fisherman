@@ -1,0 +1,64 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.27 Payment css
+/*----------------------------------------*/
+.payment__area {
+	@media #{$xs, $sm, $md} {
+		padding-bottom: 70px;
+	}
+}
+.payment__thumb-wrapper {
+	padding-right: 85px;
+	@media #{$xs, $sm, $md, $lg} {
+		padding-right: 0;
+	}
+}
+.payment__thumb {
+	max-width: 425px;
+	position: relative;
+	margin-top: -190px;
+    &::before {
+		position: absolute;
+		content: "";
+		height: 61%;
+		width: 100%;
+		@include border-radius(6px);
+        background: linear-gradient(360deg, #0F0B25 0%, rgba(15, 11, 37, 0.00) 100%);
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+	}
+}
+.payment__notice {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+    backdrop-filter: blur(19.285715103149414px);
+    padding: 15px 20px;
+    position: absolute;
+    right: 14%;
+    top: 50%;
+    @extend %translateY1_2;
+	z-index: 5;
+}
+.payment__notice-icon {
+	span {
+		width: 50px;
+		height: 50px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bd-theme-primary);
+		@include border-radius(50%);
+	}
+}
+
+.payment__notice-text {
+	span {
+        font-size: 18px;
+        color: var(--bd-common-white);
+	}
+}

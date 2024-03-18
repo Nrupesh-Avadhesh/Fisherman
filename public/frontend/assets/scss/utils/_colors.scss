@@ -1,0 +1,62 @@
+$colors: (
+  common: (
+    "white": #FFFFFF,
+    "black": #000000,
+    "placeholder": #555555,
+    "selection": #262626,
+  ),
+  body: (
+    "primary": rgba(6, 6, 6, 1),
+    "secondary": rgba(255, 255, 255, 1),
+  ),
+  theme: (
+    "primary": #089EFF,
+    "secondary": #FB5141,
+    "tertiary": #674AD9,
+    "quaternary": #E540A3,
+  ),
+  heading: (
+    "primary": #060606,
+    "secondary": #021D35,
+  ),
+  text: (
+    "body": #7C7E82,
+    "primary": #FFFFFF,
+    "secondary": #111111,
+    "1": #7C7E82,
+  ),
+  bg: (
+    "1": rgba(14, 10, 36, 1),
+    "2": rgba(6, 6, 6, 1),
+    "3": rgba(14, 10, 36, 0.5),
+    "4": rgba(18, 18, 18, 1),
+    "5": #121212,
+    "6": rgba(255, 255, 255, 0.06),
+    "7": rgb(240, 235, 255),
+    "8": rgb(236, 235, 241),
+    "9": rgb(242, 242, 242),
+    "10": rgb(247, 247, 247),
+  ),
+  border: (
+    "primary": rgba(255, 255, 255, 0.079),
+    "secondary": rgba(2, 29, 53, 1),
+  ),
+  gradient: (
+    "1":
+      linear-gradient(
+        90deg,
+        rgba(251, 81, 65, 1),
+        rgba(103, 74, 217, 1),
+        rgba(103, 74, 217, 1),
+        rgba(251, 81, 65, 1)
+      ),
+    "2": linear-gradient(90deg, #674AD9 0%, #FB5141 100%),
+    "3": linear-gradient(90deg, #FB5141 0%, #089EFF 100%),
+  ),
+);
+$white : #fff;
+$black : #000;
+$theme-primary : #089EFF;
+$border-secondary : #FB5141;
+$border-tertiary : #674AD9;
+$border-quaternary : #E540A3;

@@ -1,0 +1,153 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  6.5 Footer Style 5
+/*----------------------------------------*/
+
+// Footer widget 5
+.footer__widget-5 {
+	&:nth-child(1) {
+        width: 18%;
+		@media #{$lg} {
+			width: 25%;
+        }
+        @media #{$md} {
+          width: 25%;
+        }
+		@media #{$xs, $sm} {
+			width: 100%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+    }
+	&:nth-child(2) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:nth-child(3) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:nth-child(4) {
+		width: 20%;
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 25%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
+	}
+	&:last-child {
+		@media #{$lg} {
+			width: 20%;
+		}
+		@media #{$md} {
+			width: 62%;
+		}
+		@media #{$xs, $sm} {
+			width: 45%;
+		}
+	}
+	.contact__info-content {
+		p {
+			color: var(--bd-common-white);
+		}
+	}
+	.footer__content {
+		& > P {
+			margin-bottom: 32px;
+		}
+	}
+}
+
+.footer__wrapper-5 {
+	padding: 75px 0;
+	position: relative;
+	z-index: 5;
+
+	@media #{$xxs} {
+		padding: 50px 0;
+	}
+
+	&::before {
+		position: absolute;
+		content: "";
+		height: 100%;
+		width: calc(100% - 15%);
+		background: rgba(6, 6, 6, 1);
+		top: 0;
+		left: 50%;
+		@extend %translateX1_2;
+		border-radius: 20px;
+		z-index: -1;
+
+		@include light {
+			background: var(--bd-common-white);
+		}
+
+		@media #{$sm, $md, $lg, $xl, $xxl} {
+			width: calc(100% - 5%);
+		}
+
+		@media #{$xs} {
+			width: calc(100% - 0%);
+		}
+	}
+}
+
+.footer__glow-4 {
+	.glow-1 {
+		background: #573fea;
+		@include border-radius(50%);
+		width: 235px;
+		height: 235px;
+		filter: blur(200px);
+		position: absolute;
+		top: 0;
+		left: -120px;
+	}
+
+	.glow-2 {
+		background: linear-gradient(-90deg, rgba(103, 74, 217, 1) 0%, rgba(251, 81, 65, 1) 100%);
+		@include border-radius(50%);
+		width: 241px;
+		height: 241px;
+		filter: blur(200px);
+		position: absolute;
+		bottom: 105%;
+		right: -130px;
+	}
+}
+
+.footer__bottom.bt-0 {
+	border-top: 0;
+}

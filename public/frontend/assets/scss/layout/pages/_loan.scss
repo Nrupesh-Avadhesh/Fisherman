@@ -1,0 +1,277 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.19 Loan css
+/*----------------------------------------*/
+.loan__item {
+	padding: 40px 40px 35px;
+	background: rgba(255, 255, 255, 0.05);
+	@include light {
+		background: rgb(245, 245, 245);
+	}
+	@media #{$xxl, $lg} {
+		padding: 40px 30px 35px;
+	}
+    &.is-brick-red {
+		.loan__icon {
+			span {
+				background: rgba(251, 83, 67,0.10);
+				color: rgb(251, 83, 67);
+			}
+		}
+		&:hover {
+			.loan__icon {
+				span {
+					background: rgba(251, 81, 65, 1);
+				}
+			}
+		}
+	}
+	&.is-deep-purple {
+		.loan__icon {
+			span {
+				background: rgba(101, 73, 213, 0.10);
+				color: rgb(101, 73, 213);
+			}
+		}
+		&:hover {
+			.loan__icon {
+				span {
+					background: rgba(103, 74, 217, 1);
+				}
+			}
+		}
+	}
+	&:hover {
+		.loan__icon {
+			span {
+				background: rgba(8, 158, 255, 1);
+				color: var(--bd-common-white);
+			}
+		}
+	}
+}
+.loan__icon {
+	margin-bottom: 25px;
+    span {
+		height: 84px;
+		width: 84px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(5, 157, 255, 0.1);
+		@include border-radius(50%);
+		font-size: 45px;
+		color: rgb(5, 157, 255);
+        img {
+            max-width: 46px;
+        }
+    }
+}
+.loan__content {
+	h3 {
+		margin-bottom: 20px;
+		a {
+			&:hover {
+				color: var(--bd-theme-primary);
+			}
+		}
+	}
+	p {
+		margin-bottom: 0;
+	}
+}
+
+// Loan Calculator style
+.loan__from-title {
+    h3 {
+		font-size: 32px;
+		margin-bottom: 40px;
+		color: var(--bd-common-white);
+		@media #{$xs, $sm, $md} {
+			font-size: 26px;
+			margin-bottom: 30px;
+		}
+    } 
+}
+.loan__wrapper {
+	padding: 50px 60px 60px;
+	background: var(--bd-gradient-2);
+	@include border-radius(6px);
+	display: grid;
+	grid-template-columns: 48.6% 51.4%;
+	align-items: center;
+	justify-content: space-between;
+	@media #{$lg} {
+		grid-template-columns: 50% 50%;
+		padding: 40px 40px 50px;
+	}
+	@media #{$md} {
+		padding: 40px 40px 40px;
+		grid-template-columns: 1fr;
+		grid-gap: 50px;
+	}
+	@media #{$xs, $sm} {
+		padding: 30px 30px 30px;
+		grid-template-columns: 1fr;
+		grid-gap: 50px;
+	}
+}
+.loan__form-wrapper {
+	padding-right: 85px;
+	@media #{$xl} {
+		padding-right: 60px;
+	}
+	@media #{$lg} {
+		padding-right: 30px;
+	}
+	@media #{$xs, $sm ,$md} {
+		padding-right: 0px;
+	}
+}
+.loan__input-title {
+	label {
+		display: block;
+		margin-bottom: 15px;
+		color: var(--bd-common-white);
+		letter-spacing: -0.2px;
+		font-size: 18px;
+	}
+}
+.loan__input {
+	input {
+		height: 65px;
+		@include border-radius(6px);
+		background: transparent;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		padding: 0 20px;
+		font-size: 18px;
+		color: rgba(255, 255, 255, 0.69)
+	}
+}
+.nice-select {
+	&.loan__select {
+        height: 65px;
+        width: 100%;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        float: none;
+		&.open {
+			.list {
+				-webkit-transform: scale(1) translateY(0px);
+				-moz-transform: scale(1) translateY(0px);
+				-ms-transform: scale(1) translateY(0px);
+				-o-transform: scale(1) translateY(0px);
+				transform: scale(1) translateY(0px);
+			}
+		}
+		.current {
+			color: rgba(255, 255, 255, 0.69);
+			text-align: left;
+			font-size: 18px;
+			position: relative;
+		}
+		.list {
+			transform-origin: center center;
+			-webkit-transform: scale(0.9) translateY(0px);
+			-moz-transform: scale(0.9) translateY(0px);
+			-ms-transform: scale(0.9) translateY(0px);
+			-o-transform: scale(0.9) translateY(0px);
+			transform: scale(0.9) translateY(0px);
+			width: 100%;
+			padding: 10px 0;
+		}
+		&::after {
+			right: 20px;
+			color: var(--bd-common-white);
+			font-size: 18px;
+			right: 20px;
+		}
+		.option {
+			font-size: 16px;
+		}
+	}
+}
+.loan__input-item {
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+}
+.loan__notice {
+	padding: 25px 20px;
+	background: rgba(217, 217, 217, 0.15);
+	@include border-radius(6px);
+	margin-top: 30px;
+}
+.loan__notice-content {
+	& > span {
+		color: var(--bd-common-white);
+		margin-bottom: 15px;
+		display: block
+	}
+	h3 {
+		font-size: 32px;
+		font-weight: 600;
+		color: var(--bd-common-white);
+		@media #{$xs, $sm, $md} {
+			font-size: 26px;
+		}
+		span {
+			font-weight: 400;
+			font-size: 16px;
+		}
+	}
+}
+
+
+// Loan range
+.loan__range {
+	.ui-slider {
+		.ui-loan-range {
+			background: rgb(255, 255, 255);
+		}
+		.ui-slider-handle {
+			@include border-radius(50%);
+			width: 20px;
+			height: 20px;
+		}
+	}
+	.ui-widget {
+		&.ui-widget-content {
+			height: 5px;
+			background-color: rgb(180, 135, 199);
+			border: 0;
+			width: calc(100% - 40px);
+			left: 20px;
+		}
+	}
+	.ui-slider-horizontal {
+		.ui-slider-handle {
+			top: -9px;
+		}
+	}
+	.ui-button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, html .ui-button.ui-state-disabled:active, html .ui-button.ui-state-disabled:hover {
+		border: 5px solid #fff;
+		background: linear-gradient(to left, #b487c7, #b487c7),
+		linear-gradient(to left, #ffffff, #ffffff);
+		font-weight: 400;
+		color: #454545;
+		-webkit-transition: -webkit-transform .3s ease-out,box-shadow .3s ease-out;
+		-webkit-transition: -webkit-transform .3s ease-out,-webkit-box-shadow .3s ease-out;
+		transition: -webkit-transform .3s ease-out,-webkit-box-shadow .3s ease-out;
+		transition: transform .3s ease-out,box-shadow .3s ease-out;
+		transition: transform .3s ease-out,box-shadow .3s ease-out,-webkit-transform .3s ease-out,-webkit-box-shadow .3s ease-out;
+		-webkit-transition: -webkit-transform .3s ease-out,box-shadow .3s ease-out,-webkit-transform .3s ease-out;
+		transition: transform .3s ease-out,box-shadow .3s ease-out,-webkit-transform .3s ease-out;
+	}
+	.ui-state-active {
+		outline: none;
+	}
+	.ui-state-focus {
+		outline: none;
+	}
+	
+}

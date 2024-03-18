@@ -1,0 +1,162 @@
+@use '../../utils' as *;
+
+/*----------------------------------------*/
+/*  7.20 Login css
+/*----------------------------------------*/
+.login__wrapper {
+	max-width: 550px;
+	background: var(--bd-bg-6);
+	padding: 50px 45px;
+	@include border-radius(6px);
+	@media #{$xxs} {
+		padding: 40px 30px;
+	}
+	@include light {
+		background: var(--bd-bg-2);
+	}
+}
+.login__title {
+	font-size: 30px;
+	margin-bottom: 10px;
+	@media #{$xxs} {
+		font-size: 24px;
+	}
+}
+.login__forgot {
+	a {
+		&:hover {
+			color: var(--bd-theme-primary);
+		}
+	}
+}
+.login__input {
+	input {
+		background: rgba(255, 255, 255, 0.05);
+		@include border-radius(6px);
+		height: 60px;
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		@include light {
+			background: rgb(238, 237, 239);
+			color: var(--bd-common-placeholder);
+		}
+		&::placeholder {
+			color: var(--bd-text-body);
+		}
+		&:focus {
+			border: double 1px transparent;
+			background-image: linear-gradient(#212121, #212121), linear-gradient(to right, rgb(101, 73, 213), rgba(251, 81, 65, 1));
+			background-origin: border-box;
+			background-clip: padding-box, border-box;
+			@include light {
+			  background-image: linear-gradient(#ececec, #ececec), linear-gradient(to right, rgb(101, 73, 213), rgb(251, 83, 67));
+			  color: var(--bd-common-placeholder);
+			}
+		}
+	}
+}
+.login__divider {
+	-moz-box-align: center;
+	align-items: center;
+	display: -moz-box;
+	display: flex;
+	.divider__line {
+		border-top: 1px solid var(--bd-border-primary);
+		-moz-box-flex: 1;
+		flex-grow: 1;
+		height: 0;
+	}
+	.or {
+		color: rgb(154, 160, 166);
+		cursor: default;
+		flex-shrink: 0;
+		font-size: 18px;
+		margin-left: 18px;
+		margin-right: 18px;
+		font-weight: 500;
+	}
+}
+.log__not-account {
+	p {
+		font-size: 16px;
+		margin-bottom: 0;
+		a {
+			color: var(--bd-theme-primary);
+			&:hover {
+				color: var(--bd-theme-primary);
+			}
+		}
+	}
+}
+.forget__password {
+    a {
+        &:hover {
+            color: var(--bd-theme-primary);
+        }
+    }
+}
+.login__gamil-btn {
+	span {
+		width: 28px;
+		height: 28px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--bd-common-white);
+		border-radius: 50%;
+	}
+}
+.login__remember {
+	& label{
+		position: relative;
+		padding-left: 30px;
+		&::after,
+		&::before{
+			position: absolute;
+			content: "";
+			left: 0;
+			top: 2px;
+			width: 20px;
+			height: 20px;
+			background-color: rgba(255, 255, 255, 0.05);
+			border: 1px solid var(--bd-border-primary);
+			border-radius: 4px;
+			transition: .2s;
+		}
+		&::before{
+			width: 12px;
+			height: 12px;
+			background-color: var(--bd-theme-primary);
+			left: 4px;
+			top: 6px;
+			right: 3px;
+			bottom: 3px;
+			@include transform(scale(0));
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+.login__remember {
+	input[type="checkbox"] {
+		display: none;
+		&:checked {
+			~ {
+				label {
+					&::before {
+						-webkit-transform: scale(1);
+						-moz-transform: scale(1);
+						-ms-transform: scale(1);
+						-o-transform: scale(1);
+						transform: scale(1);
+					}
+				}
+			}
+		}
+	}
+}
+.login__submit {
+	.bd-gradient-btn {
+		border-radius: 4px;
+	}
+}
