@@ -1,5 +1,5 @@
 <!-- Favicon icon -->
-<link rel="icon" href="{{ asset('assets\images\favicon.png') }}" type="image/x-icon">
+<link rel="icon" href="{{ asset('uploads/logo') }}/{{ header_logo('fav_icon') }}" type="image/x-icon">
 <!-- Google font-->
 {{-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet"> --}}
 <link rel="stylesheet" type="text/css" href="{{ asset('assets\fonts\OpenSans-Light.ttf') }}">

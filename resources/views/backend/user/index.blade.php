@@ -46,7 +46,7 @@
                                                                     <td>{{ $val->name }}</td>
                                                                     <td>{{ $val->email }}</td>
                                                                     <td>{{ $val->mobile_number }}</td>
-                                                                    <td>{{ $val->payamount }}</td>
+                                                                    <td>{{ $val->fees }}</td>
                                                                     <td>@if($val->is_pay == 1) Yes @else No @endif</td>
                                                                     <td><a href="{{ route('superAdmin.user.client.edit') }}?id={{ $val->id }}" class="btn"><i class="fa fa-edit"></i></a></td>
                                                                 </tr>

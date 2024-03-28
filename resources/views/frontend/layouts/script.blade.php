@@ -20,7 +20,7 @@
         var  url_q_data = $('#url_q_data').val();
         var REQUEST_URI = $('#REQUEST_URI').val();
         var ENDPOINT = "{{ route('blog.lt_list') }}";
-        if(url_q_data != '/blog' && url_q_data != '/blog-detail' && url_q_data != '/contact' && url_q_data != '/' && url_q_data != '/public/blog' && url_q_data != '/public/blog-detail' && url_q_data != '/public/contact' && url_q_data != '/public/'){
+        if(url_q_data != '/blog' && url_q_data != '/blog-detail' && url_q_data != '/contact' && url_q_data != '/' && url_q_data != '/public/blog' && url_q_data != '/public/blog-detail' && url_q_data != '/public/contact' && url_q_data != '/public/' && url_q_data != '/privacy-policy' && url_q_data != '/public/privacy-policy'){
             infinteLoadMore()
         }
         function infinteLoadMore() {
@@ -42,7 +42,7 @@
         }
 
         var ENDPOINT2 = "{{ route('video.lt_list') }}";
-        if(url_q_data != '/video' && url_q_data != '/contact' && url_q_data != '/' && url_q_data != '/public/video' && url_q_data != '/public/contact' && url_q_data != '/public/'){
+        if(url_q_data != '/video' && url_q_data != '/contact' && url_q_data != '/' && url_q_data != '/public/video' && url_q_data != '/public/contact' && url_q_data != '/public/' && url_q_data != '/privacy-policy' && url_q_data != '/public/privacy-policy'){
             infinteLoadMore_video()
         }
         function infinteLoadMore_video() {

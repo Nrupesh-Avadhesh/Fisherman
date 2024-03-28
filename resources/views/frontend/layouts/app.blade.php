@@ -50,7 +50,7 @@
     @php 
         $url = explode('?', $_SERVER['REQUEST_URI']);
     @endphp
-    @if ($url[0] != '/blog'&& $url[0] != '/blog-detail' && $url[0] != '/contact'&& $url[0] != '/' && $url[0] != '/public/blog'&& $url[0] != '/public/blog-detail' && $url[0] != '/public/contact'&& $url[0] != '/public/')
+    @if ($url[0] != '/blog'&& $url[0] != '/blog-detail' && $url[0] != '/contact'&& $url[0] != '/' && $url[0] != '/public/blog'&& $url[0] != '/public/blog-detail' && $url[0] != '/public/contact' && $url[0] != '/public/' && $url[0] != '/privacy-policy' && $url[0] != '/public/privacy-policy')
         @include('frontend.layouts.BVF')
     @endif
     <!-- Footer area start -->

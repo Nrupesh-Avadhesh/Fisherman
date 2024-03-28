@@ -6,7 +6,7 @@
                     <div class="offcanvas__top d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
                             <a href="{{ route('home')}}">
-                                <img src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
+                                <img src="{{ asset('uploads/logo') }}/{{ header_logo('header_logo') }}" alt="logo not found">
                             </a>
                         </div>
                         <div class="offcanvas__close">
@@ -21,16 +21,17 @@
                     <div class="offcanvas__social">
                         <h3 class="offcanvas__title mb-20">Subscribe & Follow</h3>
                         <ul>
-                            <li><a href="https://www.facebook.com/thefishermangroup/" aria-label="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                            {!! social_media('header') !!}
+                            {{-- <li><a href="https://www.facebook.com/thefishermangroup/" aria-label="facebook"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://twitter.com/fisherman_group" aria-label="twitter"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="https://www.youtube.com/@FishermanGroup-wq7zp" aria-label="youtube"><i class="fab fa-youtube"></i></a></li>
-                            <li><a href="https://www.instagram.com/fisherman_group/" aria-label="instagraminstagram"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/fisherman_group/" aria-label="instagraminstagram"><i class="fab fa-instagram"></i></a></li> --}}
                         </ul>
                     </div>
                     <div class="offcanvas__btn">
                         <div class="header__btn-wrap">
                             @if(Auth::user() && Auth::user()->role == 'client')
-                                <a class="bd-gradient-btn" href="#"><i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i></a>
+                                <a class="bd-gradient-btn" href="{{ route('user.profile') }}"><i class="fa-solid fa-user fa-xl" style="color: #ffffff;"></i></a>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <a class="sub__btn sm" href="{{ url('/logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"><i class="feather icon-log-out"></i> Logout </a>
@@ -59,7 +60,7 @@
                     <div class="header__left">
                         <div class="header__logo">
                             <a href="{{ route('home')}}">
-                                <img class="logo__white" src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
+                                <img class="logo__white" src="{{ asset('uploads/logo') }}/{{ header_logo('header_logo') }}" alt="logo not found">
                             </a>
                         </div>
                     </div>
@@ -68,7 +69,8 @@
                             <div class="main-menu">
                                 <nav id="mobile-menu">
                                     <ul class="onepage-menu">
-                                        <li>
+                                        {!! crateheader() !!}
+                                        {{-- <li>
                                             <a href="{{ route('home')}}">Home</a>
                                         </li>
                                         <li>
@@ -77,20 +79,13 @@
                                         <li>
                                             <a href="{{ route('why.fisherman')}}">Why Fisherman</a>
                                         </li>
-                                        {{-- <li>
-                                            <a href="{{ route('blog')}}">Blog</a>
-                                        </li> --}}
                                         <li class="has-dropdown has-mega-menu">
                                             <a href="javascript:void(0)">Resources</a>
                                             <ul class="mega-menu">
                                                 <li style="display: block;margin: 0;"><a style="padding: 5px 0;"href="{{ route('blog')}}">Blog</a></li>
                                                 <li style="display: block;margin: 0;"><a style="padding: 5px 0;"href="{{ route('video')}}">Video</a></li>
                                                 <li style="display: block;margin: 0;"><a style="padding: 5px 0;"href="{{ route('faq')}}">FAQ</a></li>
-                                                {{-- <li><a href="personal-loan.html">Personal Loan</a></li> --}}
                                             </ul>
-                                        </li>
-                                        
-                                        {{-- <li><a href="{{ route('contact') }}">Support</a>
                                         </li> --}}
                                     </ul>
                                 </nav>

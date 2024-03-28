@@ -14,7 +14,7 @@
                             <div class="card-block">
                                 <div class="row m-b-20">
                                     <div class="col-md-12">
-                                        <span class="logo"><img src="{{ asset('assets/images/logo/avatar-2.png') }}"></span>
+                                        <span class="logo"><img src="{{ asset('uploads/logo') }}/{{ header_logo('login_logo') }}"></span>
                                         <h3 class="text-center title-stationery">FISHERMAN<span></span></h3>
                                     </div>
                                 </div>

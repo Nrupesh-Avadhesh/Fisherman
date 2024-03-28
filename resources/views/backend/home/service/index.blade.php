@@ -53,7 +53,7 @@
                                                             <div class="col-12 col-md-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Description</label>
-                                                                    <textarea name="description" class="form-control" cols="30" rows="5">{{ old('description_1', @$service->description) }}</textarea>
+                                                                    <textarea name="description" class="form-control" cols="30" rows="5">{{ old('description', @$service->description) }}</textarea>
                                                                     @error('description')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
@@ -144,8 +144,8 @@
                                                             <div class="col-12 col-md-12">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Description</label>
-                                                                    <textarea name="description" class="form-control" cols="30" rows="5">{{ old('description_1', @$edit_service->description) }}</textarea>
-                                                                    @error('description')
+                                                                    <textarea name="service_description" class="form-control" cols="30" rows="5">{{ old('service_description', @$edit_service->description) }}</textarea>
+                                                                    @error('service_description')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>

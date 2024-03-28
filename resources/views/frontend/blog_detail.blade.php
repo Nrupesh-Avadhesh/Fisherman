@@ -102,29 +102,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar__widget mb-40">
-                            <div class="sidebar__widget-content">
-                                <div class="sidebar__subcribe">
-                                    <h3 class="sidebar__widget-title">Subscribe Us</h3>
-                                    <p>Lorem ipsum dolor amet consectetur adipiscing elit massa.</p>
-                                    <form action="#">
-                                        <div class="sidebar__subscribe">
-                                            <input type="email" placeholder="Enter Email">
-                                            <button class="bd-gradient-btn w-100" type="submit">Submit now<span><i class="fa-regular fa-chevron-right"></i></span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="sidebar__widget mb-40">-->
+                        <!--    <div class="sidebar__widget-content">-->
+                        <!--        <div class="sidebar__subcribe">-->
+                        <!--            <h3 class="sidebar__widget-title">Subscribe Us</h3>-->
+                                    <!--<p>Lorem ipsum dolor amet consectetur adipiscing elit massa.</p>-->
+                        <!--            <form action="#">-->
+                        <!--                <div class="sidebar__subscribe">-->
+                        <!--                    <input type="email" placeholder="Enter Email">-->
+                        <!--                    <button class="bd-gradient-btn w-100" type="submit">Submit now<span><i class="fa-regular fa-chevron-right"></i></span></button>-->
+                        <!--                </div>-->
+                        <!--            </form>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
                         <div class="sidebar__widget mb-40">
                             <div class="sidebar__widget-content">
                                 <div class="sidebar__share">
                                     <h3 class="sidebar__widget-title">Share Post</h3>
                                     <div class="footer__social">
-                                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                        {!! social_media('footer') !!}
+                                        {{-- <a href="#"><i class="fa-brands fa-facebook"></i></a>
                                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
                                         <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="#"><i class="fa-brands fa-youtube"></i></a> --}}
                                     </div>
                                 </div>
                             </div>

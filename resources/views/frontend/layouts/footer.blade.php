@@ -8,7 +8,7 @@
 @php 
 $url = explode('?', $_SERVER['REQUEST_URI']);
 @endphp
-@if ($url[0] != '/contact')
+@if ($url[0] != '/contact' && $url[0] != '/public/contact' && $url[0] != '/privacy-policy' && $url[0] != '/public/privacy-policy')
 <!-- Payment area start -->
 <section class="payment__area {{-- midnight-blue --}} section-space-top mt-50">
     <div class="container">
@@ -64,18 +64,19 @@ $url = explode('?', $_SERVER['REQUEST_URI']);
                     <div class="footer__widget">
                         <div class="footer__logo mb-25">
                             <a href="#">
-                                <img src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
+                                <img src="{{ asset('uploads/logo') }}/{{ header_logo('footer_logo') }}" alt="logo not found">
                             </a>
                         </div>
                         <div class="footer__content">
                             <!--<p>Fisherman Your Trade Manager</p>-->
-                            <p>Fisherman is your trusted trade manager, dedicated to empowering traders worldwide. Our mission is to simplify the complexities of trading by providing innovative solutions and expert guidance. </p>
+                            <p>{{ cratefooter('about') }}</p>
                             {{-- <p>Trading with Fisherman – Your Passport to Success</p> --}}
                             <div class="footer__social">
-                                <a href="https://www.facebook.com/thefishermangroup/" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
+                                {!! social_media('footer') !!}
+                                {{-- <a href="https://www.facebook.com/thefishermangroup/" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
                                 <a href="https://twitter.com/fisherman_group" aria-label="twitter"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="https://www.instagram.com/fisherman_group/" aria-label="instagraminstagram"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/@FishermanGroup-wq7zp" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a>
+                                <a href="https://www.youtube.com/@FishermanGroup-wq7zp" aria-label="youtube"><i class="fa-brands fa-youtube"></i></a> --}}
                             </div>
                         </div>
                     </div>
@@ -131,7 +132,7 @@ $url = explode('?', $_SERVER['REQUEST_URI']);
                                 <span><i class="fa-solid fa-envelope"></i></span>
                             </div>
                             <div class="info-content">
-                                <p><a href="mailto:support@fishermangroup.com">support@fishermangroup.com</a></p>
+                                <p>{!! cratefooter('email') !!}</p>
                             </div>
                         </div>
                     </div>
@@ -139,12 +140,12 @@ $url = explode('?', $_SERVER['REQUEST_URI']);
             </div>
             <div class="footer__bottom">
                 <div class="footer__copyright">
-                    <p>Copyright © 2024 <a href="#">Fisherman Group</a></p>
+                    <p>{{ cratefooter('copyright') }}</p>
                 </div>
                 <div class="footer__conditions">
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                        {{-- <li><a href="#">Contact Us</a></li> --}}
                     </ul>
                 </div>
             </div>
@@ -153,101 +154,5 @@ $url = explode('?', $_SERVER['REQUEST_URI']);
 </footer> 
 <!-- Footer area start -->
 {{-- midnight-blue --}}
- {{-- <footer class=" p-relative x-clip">
-    <div class="footer__glow-4">
-        <div class="glow-1"></div>
-        <div class="glow-2"></div>
-    </div>
-    <section class="footer__area">
-        <div class="footer__wrapper-5">
-            <div class="container">
-                <div class="footer__grid">
-                    <div class="footer__widget">
-                        <div class="footer__logo mb-30">
-                            <a href="#">
-                                <img src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
-                            </a>
-                        </div>
-                        <div class="footer__content">
-                            <p>Lorem ipsum dolor sit am oledop consectetur adipiscing elit Ut et massa mi. Aliquam</p>
-                            <div class="footer__social">
-                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer__widget">
-                        <div class="footer__widget-title">
-                            <h5>Use Cases</h5>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">SaaS</a></li>
-                                <li><a href="#">Online Business</a></li>
-                                <li><a href="#">Creators</a></li>
-                                <li><a href="#">E-Commerce</a></li>
-                                <li><a href="#">Agencies</a></li>
-                                <li><a href="#">Secure</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer__widget">
-                        <div class="footer__widget-title">
-                            <h5>Products</h5>
-                        </div>
-                        <div class="footer__link">
-                            <ul>
-                                <li><a href="#">Invoicing</a></li>
-                                <li><a href="#">Office Hours</a></li>
-                                <li><a href="#">Explore More</a></li>
-                                <li><a href="#">Loan Type</a></li>
-                                <li><a href="#">Calculate</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer__widget">
-                        <div class="footer__widget-title">
-                            <h5>Newsletter</h5>
-                        </div>
-                        <div class="footer__newsletter">
-                            <p>For latest Update subscribe us!</p>
-                            <form >
-                                <div class="footer__newsletter-from mb-30">
-                                    <div class="footer__newsletter-input p-relative">
-                                        <input type="text" placeholder="Enter Email">
-                                        <button class="footer__round-btn" type="submit"><i class="fa-regular fa-angle-right"></i></button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="footer__short-info">
-                                <div class="info-icon">
-                                    <span><i class="fa-solid fa-envelope"></i></span>
-                                </div>
-                                <div class="info-content">
-                                    <p><a href="mailto:support@fishermangroup.com">support@fishermangroup.com</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="footer__bottom bt-0">
-                <div class="footer__copyright">
-                    <p>Copyright © 2024 <a href="#">Fisherman</a></p>
-                </div>
-                <div class="footer__conditions">
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-</footer> --}}
 <!-- Footer area end -->
 

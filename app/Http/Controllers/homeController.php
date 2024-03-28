@@ -271,7 +271,7 @@ class homeController extends Controller
         $request->validate([
             'icon' => 'string|required|max:150',
             'title' => 'string|required|max:150',
-            'description' => 'string|required|max:500',
+            'service_description' => 'string|required|max:500',
             'status' => 'required',
             'url' => 'nullable|url|required_with:button_name',
             'button_name' => 'nullable|required_with:url',
@@ -289,7 +289,7 @@ class homeController extends Controller
         if($request->status != 'Delete'){
             $home_service->icon = $request->icon;
             $home_service->title = $request->title;
-            $home_service->description = $request->description;
+            $home_service->description = $request->service_description;
             $home_service->status = $request->status;
             $home_service->url = $request->url;
             $home_service->button_name = $request->button_name;

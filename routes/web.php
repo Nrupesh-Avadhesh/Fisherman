@@ -61,7 +61,7 @@ Route::post('/profile/store', [App\Http\Controllers\frontend\loginController::cl
 Route::post('/password/store', [App\Http\Controllers\frontend\loginController::class,'passwordstore'])->name('password.store');
 Route::post('/payment/store', [App\Http\Controllers\frontend\loginController::class,'paymentstore'])->name('payment.store');
 Route::post('/logout', [App\Http\Controllers\frontend\loginController::class,'logout'])->name('logout');
-
+Route::view('/privacy-policy', 'frontend.privacy_policy')->name('privacy.policy');
 // Route::post('/contact', [App\Http\Controllers\frontend\contactController::class, 'store'])->name('contact.attempt');
 // Route::post('/contact', [App\Http\Controllers\frontend\contactController::class, 'store'])->name('contact.attempt');
 
@@ -181,6 +181,18 @@ Route::group(['prefix' => 'superAdmin'], function(){
 
             Route::get('/', [App\Http\Controllers\faqController::class, 'faq_list'])->name('superAdmin.faq.list');
             Route::post('/update', [App\Http\Controllers\faqController::class, 'faq_list_update'])->name('superAdmin.faq.update');
+        });
+        Route::group(['prefix' => 'setting'], function(){
+            Route::get('/header', [App\Http\Controllers\HeaderController::class, 'index'])->name('superAdmin.setting.header');
+            Route::get('/header-edit', [App\Http\Controllers\HeaderController::class, 'edit'])->name('superAdmin.setting.header.edit');
+            Route::post('/header/update', [App\Http\Controllers\HeaderController::class, 'update'])->name('superAdmin.setting.header.update');
+            
+            Route::get('/logo', [App\Http\Controllers\SitelogoController::class, 'index'])->name('superAdmin.setting.logo');
+            Route::post('/logo/update', [App\Http\Controllers\SitelogoController::class, 'update'])->name('superAdmin.setting.logo.update');
+            
+            Route::get('/footer', [App\Http\Controllers\FooterController::class, 'index'])->name('superAdmin.setting.footer');
+            Route::post('/footer/update', [App\Http\Controllers\FooterController::class, 'footer_update'])->name('superAdmin.setting.footer.update');
+            Route::post('/social-media/update', [App\Http\Controllers\FooterController::class, 'social_media_update'])->name('superAdmin.setting.social.media.update');
         });
     });
 });

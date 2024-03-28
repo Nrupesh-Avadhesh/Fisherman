@@ -503,9 +503,11 @@
   //   $(".loan-amount").val("$1500 USD");
   var max = 1000000;
   var min = 1500;
+  var feesamo = 150;
     $(".loan-amount").val(min).attr("min",min).attr("max",max); 
     $("#payamount").val(min);
-    $(".payment_tit").text("$ "+min+" USD Pay");
+    $("#feesamo").val(feesamo);
+    $(".payment_tit").text("$ "+feesamo+" USD Pay");
     $("#fees").text("$150 USD");
   //   $(".loan-range-bar").slider({
   //     range: "min",
@@ -578,8 +580,9 @@
           // $('.ui-slider-handle').css('left', per+'%');
   
           var fee = (amo * 10) / 100;
-          $(".payment_tit").text("$ "+amo+" USD Pay");
+          $(".payment_tit").text("$ "+fee+" USD Pay");
           $("#fees").text("$ " + fee + " USD");
+          $("#feesamo").val(fee);
           $("#payamount").val(amo);
       }
     /*======================================

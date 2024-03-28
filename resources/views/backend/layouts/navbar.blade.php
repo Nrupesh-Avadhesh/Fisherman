@@ -6,7 +6,7 @@
                 <i class="feather icon-menu"></i>
             </a>
             <a href="{{route('superAdmin.dashboard')}}" style=" display: inline-block; max-width: 150px; max-height: 56px; ">
-                <img class="img-fluid" src="{{ asset('assets\images\logo\bank.png') }}" alt="Theme-Logo">
+                <img class="img-fluid" src="{{ asset('uploads/logo') }}/{{ header_logo('header_logo') }}" alt="Theme-Logo">
             </a>
             <a class="mobile-options">
                 <i class="feather icon-more-horizontal"></i>
@@ -93,7 +93,7 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('assets\images\logo\avatar-2.png') }}" class="img-radius"
+                            <img src="{{ asset('uploads/logo') }}/{{ header_logo('login_logo') }}" class="img-radius"
                                 alt="User-Profile-Image">
                             <span>Developer</span>
                             <i class="feather icon-chevron-down"></i>

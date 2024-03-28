@@ -44,7 +44,7 @@
                         <div class="offcanvas__top d-flex justify-content-between align-items-center">
                             <div class="offcanvas__logo">
                                 <a href="{{ route('home')}}">
-                                    <img src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
+                                    <img src="{{ asset('uploads/logo') }}/{{ header_logo('header_logo') }}" alt="logo not found">
                                 </a>
                             </div>
                             <div class="offcanvas__close">
@@ -71,7 +71,7 @@
                         <div class="header__left">
                             <div class="header__logo">
                                 <a href="{{ route('home')}}">
-                                    <img class="logo__white" src="{{ asset('frontend/assets/imgs/logo/logo-white.png') }}" alt="logo not found">
+                                    <img class="logo__white" src="{{ asset('uploads/logo') }}/{{ header_logo('header_logo') }}" alt="logo not found">
                                 </a>
                             </div>
                         </div>

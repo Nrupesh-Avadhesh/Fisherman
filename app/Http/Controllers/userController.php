@@ -42,11 +42,28 @@ class userController extends Controller
             }
         }
         $request->validate([
+            'first_name' => 'required|max:100',
+            'last_name' => 'required|max:100',
+            'email' => ['required','email',Rule::unique('users')->where(function (Builder $query) use($request) {
+                return $query->where('email', $request->email)->where('id', '!=',$request->id);
+            })],
+            'mobile_number' => 'required|numeric|digits:10',
+            'payamount' => 'required',
+            'fees' => 'required',
+            'account' => 'required|in:Referral Partner,Existing Account',
             'is_pay' => 'required|in:0,1',
         ]);
 
 
         $user = User::where('id', $request->id)->first();
+        $user->name = $request->first_name.' '.$request->last_name;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
+        $user->email = $request->email;
+        $user->mobile_number = $request->mobile_number;
+        $user->payamount = $request->payamount;
+        $user->fees = $request->fees;
+        $user->account = $request->account;
         $user->is_pay = $request->is_pay;
         
         if($user->save()){

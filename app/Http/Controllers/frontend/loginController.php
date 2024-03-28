@@ -120,6 +120,7 @@ class loginController extends Controller
                         'confirm_password' => ['required','required_with:password', 'same:password', 'min:8'],
                         'i_agree' => ['required'],
                         'payamount' => ['required'],
+                        'fees' => ['required'],
                         'account' => ['required'],
                     ]);
                     if ($validator->fails()) {
@@ -146,13 +147,16 @@ class loginController extends Controller
                         // $token_2 =  substr(str_shuffle(str_repeat($pool, 20)), 0, 30);
                         
                         // $data['productname'] = 'Fisherman';
-                        // $data['name'] = $user->name;
+                        $data['name'] = $user->name;
                         // $data['url'] = url('/').'/account-detail?token='.$token_1.'&'.$token_2.'='.$user->id.'&'.$token_1.'='.$token_2;
                         $data['support'] = 'support@fisherman.com';
-                        Mail::send('frontend.email.welcome', ['data' => $data],function($message) use ($request) {
-                            $message->to($request->email)
-                            ->subject('Welcome to Fisherman');
-                        });
+                        $html = welcomehtml($data);
+                        $mailrepo = sendMail($request->email, 'Welcome to Fisherman', $html);
+                        Log::emergency("mail => " . print_r($mailrepo, true));
+                        // Mail::send('frontend.email.welcome', ['data' => $data],function($message) use ($request) {
+                        //     $message->to($request->email)
+                        //     ->subject('Welcome to Fisherman');
+                        // });
                     }
                     $output = array('success' => true, 'data' => [], 'msg' => 'your account has been created successfully.please login and upload payment screenshot');
                 }   
@@ -300,16 +304,19 @@ class loginController extends Controller
             $user->password = Hash::make($password);
             if($user->save()){
                 $data['url'] = url('/');
-                $data['productname'] = 'Fisherman';
+                $data['productname'] = 'Fisherman Group';
                 $data['name'] = $user->name;
                 $data['pass'] = $password;
                 $data['login'] = url('/').'/login';
                 $data['support'] = 'support@fishermangroup.com';
                 // dd($request->email);
-                Mail::send('frontend.email.forgote_password', ['data' => $data],function($message) use ($request) {
-                    $message->to($request->email)
-                    ->subject('Important: Your Temporary Password for Fisher Man Account');
-                });
+                $html = forgote_passwordhtml($data);
+                $mailrepo = sendMail($request->email, 'Important: Your Temporary Password for Fisher Man Account', $html);
+                Log::emergency("mail => " . print_r($mailrepo, true));
+                // Mail::send('frontend.email.forgote_password', ['data' => $data],function($message) use ($request) {
+                //     $message->to($request->email)
+                //     ->subject('Important: Your Temporary Password for Fisher Man Account');
+                // });
                 return redirect()->route('login');
             } else {
                 return back()->withErrors(['email' => 'Something went wrong, please try again.',])->onlyInput('email');
@@ -384,17 +391,27 @@ class loginController extends Controller
                         $output = array('success' => false, 'data' => $validator->errors(), 'msg' => 'Something went wrong, please try again');
                         return $output;
                     }
-                    $password = 'FM12345Z';
-                    // dd(Zoom::getMeeting(83724962337));
-                    // dd(date("Y-m-d", strtotime($request->date)).'T'.date('H:i:s', strtotime($request->time)).'.000Z');
+                    $pool = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    $password =  substr(str_shuffle(str_repeat($pool, 10)), 0, 10);
+
+                    $data['name'] = $request->first_name.' '. $request->last_name;
+                    $data['agenda'] = 'Investment with fisherman group';
+                    $data['topic'] = 'schedule demo call from fisherman group';
+                    $data['Date'] = date("Y-m-d", strtotime($request->date));
+                    $data['Time'] = date('H:i:s', strtotime($request->time));
+                    $data['Duration'] = '40 Minutes';
+                    $data['password'] = $password;
+                    $data['support'] = 'support@fishermangroup.com';
+                    $data['productname'] = 'Fisherman Group';
+
                     $meetings = Zoom::createMeeting([
-                        "agenda" => 'your agenda',
-                        "topic" => 'your topic',
+                        "agenda" => $data['agenda'],
+                        "topic" => $data['topic'],
                         "type" => 2,
-                        "duration" => 60,
+                        "duration" => 40,
                         "timezone" => 'Asia/Kolkata',
                         "password" => $password,
-                        "start_time" => date("Y-m-d", strtotime($request->date)).'T'.date('H:i:s', strtotime('04:00')),
+                        "start_time" => date("Y-m-d", strtotime($request->date)).'T'.date('H:i:s', strtotime($request->time)),
                         "template_id" => '',
                         "pre_schedule" => false,
                         // "schedule_for" => 'nrupesh.shukla1984@outlook.com',
@@ -428,6 +445,13 @@ class loginController extends Controller
                         $input['password'] = $meetings['data']['password'];
                         $input['status'] = 'Schedule';
                         demo_call::create($input);
+
+                        $data['meeting_link'] =  $meetings['data']['join_url'];
+                        $data['meeting_id'] =  $meetings['data']['id'];
+
+                        $html = demo_callhtml($data);
+                        $mailrepo = sendMail($request->email, 'Subject: Invitation to Join Zoom Meeting: '.$data['topic'], $html);
+                        Log::emergency("mail => " . print_r($mailrepo, true));
                         $output = array('success' => true, 'data' => [], 'msg' => 'Your Call Scheduled request added successfully.');
                     } else {
                         $output = array('success' => false, 'data' => $meetings['message'], 'msg' =>'Something went wrong, please try again');

@@ -164,34 +164,24 @@
                             <h3 class="login__title">User Agreement </h3>
                         </div>
                         <div class="login__input mb-25" style="height: calc(100vh - 200px);overflow: auto;text-align: left;">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                            and more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                            It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                            their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-                            purpose (injected humour and the like).
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                            the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                            of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                            but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                            and more recently with desktop publishing software like Aldus PageMaker including versions of
-                            Lorem Ipsum.
-                            It is a long established fact that a reader will be distracted by the readable content of a page
-                            when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                            distribution of letters, as opposed to using 'Content here, content here', making it look like
-                            readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                            their default model text, and a search for 'lorem ipsum' will uncover many web sites still in
-                            their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
-                            purpose (injected humour and the like).
+                            Any trading activity that you partake in is your responsibility, not the responsibility of Fishermangroup, the creators of Fishermangroup, or any of the coders involved in the Fishermangroup project.
+Fishermangroup is provided to you for educational purposes only. Fishermangroup is not a financial services company, but a software company. Fishermangroup does not accept any liability for loss or damage as a result of reliance on the information contained within this website; this includes education material, price quotes, software, charts, and analysis. Please be aware of the risks associated with trading the financial markets; never invest more money than you can risk losing. The risks involved in trading are high and may not be suitable for all investors. 
+Fishermangroup doesn’t retain responsibility for any trading losses you might face as a result of using the software. The data and quotes contained may not be provided by exchanges but rather by market makers. So prices may be different from exchange prices and may not be accurate to real time trading prices. Any examples used are not a recommendation to buy or sell or a solicitation to buy or sell futures, options, bonds, forex CFDs, true Forex pairs, binaries or securities of any kind.
+RISKS ASSOCIATED WITH FOREX TRADING
+Trading foreign currencies can be a challenging and potentially profitable opportunity for investors. However, before deciding to participate in the Forex market, you should carefully consider your investment objectives, level of experience, and risk appetite. Most importantly, do not invest money you cannot afford to lose.
+There is considerable exposure to risk in any foreign exchange transaction. Any transaction involving currencies involves risks including, but not limited to, the potential for changing political and/or economic conditions that may substantially affect the price or liquidity of a currency. Investments in foreign exchange speculation may also be susceptible to sharp rises and falls as the relevant market values fluctuate. The leveraged nature of Forex trading means that any market movement will have an equally proportional effect on your deposited funds. This may work against you as well as for you. Not only may investors get back less than they invested, but in the case of higher risk strategies, investors may lose the entirety of their investment. It is for this reason that when speculating in such markets it is advisable to use only risk capital. Benefits and Risks of Leverage
+Leverage allows traders the ability to enter into a position worth many times the account value with a relatively small amount of money. This leverage can work with you as well as against you. Even though the Forex market offers traders the ability to use a high degree of leverage, trading with high leverage may increase the losses suffered. Please use caution when using leverage in trading or investing. Hypothetical Results Disclaimer
+THE RESULTS FOUND HEREIN ARE BASED ON SIMULATED OR HYPOTHETICAL PERFORMANCE RESULTS THAT HAVE CERTAIN INHERENT LIMITATIONS. UNLIKE THE RESULTS SHOWN IN AN ACTUAL PERFORMANCE RECORD, THESE RESULTS DO NOT REPRESENT ACTUAL TRADING. ALSO, BECAUSE THESE TRADES HAVE NOT ACTUALLY BEEN EXECUTED, THESE RESULTS MAY HAVE UNDER-OR OVER-COMPENSATED FOR THE IMPACT, IF ANY, OF CERTAIN MARKET FACTORS, SUCH AS LACK OF LIQUIDITY. SIMULATED OR HYPOTHETICAL TRADING PROGRAMS IN GENERAL ARE ALSO SUBJECT TO THE FACT THAT THEY ARE DESIGNED WITH THE BENEFIT OF HINDSIGHT. NO REPRESENTATION IS BEING MADE THAT ANY ACCOUNT WILL OR IS LIKELY TO ACHIEVE PROFITS OR LOSSES SIMILAR TO THESE BEING SHOWN.
+The information that may be presented is based on simulated trading using systems and education developed exclusively by Fishermangroup. Simulated results do not represent actual trading. Please note that simulated trading results may or may not have been back-tested for accuracy and that spreads/commissions are not taken into account when preparing hypothetical results.
+No representation is being made that any account will or is likely to achieve profits or losses similar to those that may be shown. Past performance is not indicative of future results. Individual results vary and no representation is made that clients will or are likely to achieve profits or incur losses comparable to those that may be shown.
+Third Party Links
+Links to third-party sites are provided for your convenience. Such sites are not within our control and may not follow the same privacy, security, or accessibility standards as ours. Fishermangroup neither endorses nor guarantees offerings of the third party providers, nor is Fishermangroup responsible for the security, content or availability of third-party sites, their partners or advertisers.
+Forex Disclaimer
+Before deciding to participate in the Forex market, you should carefully consider your investment objectives, level of experience and risk appetite. Most importantly, do not invest money you cannot afford to lose.
+There is considerable exposure to risk in any off-exchange foreign exchange transaction, including, but not limited to, leverage, creditworthiness, limited regulatory protection and market volatility that may substantially affect the price, or liquidity of a currency or currency pair. Moreover, the leveraged nature of Forex trading means that any market movement will have an equally proportional effect on your deposited funds. This may work against you as well as for you. The possibility exists that you could sustain a total loss of initial margin funds and be required to deposit additional funds to maintain your position. If you fail to meet any margin requirement, your position may be liquidated and you will be responsible for any resulting losses.
+There are risks associated with utilizing an Internet-based trading system including, but not limited to, the failure of hardware, software, and Internet connection. Any opinions, news, research, analyses, prices, or other information contained on this website are provided as general market commentary, and do not constitute investment advice. Fishermangroup is not liable for any loss or damage, including without limitation, any loss of profit, which may arise directly or indirectly from use of or reliance on such information. Fishermangroup has taken reasonable measures to ensure the accuracy of the information on the website. Our content is subject to change at any time without notice.
+While every effort is made to check the accuracy of information contained on this website, Fishermangroup cannot accept responsibility for any errors or omissions. We therefore strongly recommend that readers make their own thorough checks and seek independent financial advice before entering into any kind of transaction.
+Contact Us if you have an enquiry or concern about our disclaimer.
                         </div>
                         <div class="login__option mb-20 d-sm-flex justify-content-between">
                             <div class="login__remember">
@@ -209,7 +199,7 @@
                 <div id="calculator" style=" display: none; ">
                     <div class="login__wrapper text-center mx-auto mt-20">
                         <div class="login__intro mb-40">
-                            <h3 class="login__title">Investment Calculator </h3>
+                            <h3 class="login__title">Trading Calculator </h3>
                         </div>
                         <section class="loan__area  mb-20" style=" padding: 0; ">
                             <div class="loan__form-wrapper" style=" padding: 0; ">
@@ -217,7 +207,7 @@
                                     <div class="loan__input-item">
                                         <div class="loan__input">
                                             <div class="loan__input-title">
-                                                <label for="loan-amount">How much Money you investing?*</label>
+                                                <label for="loan-amount">How much Money you Trade?*</label>
                                             </div>
                                             <div class="loan__range">
                                                 {{-- <input type="text" id="loan-amount" class="loan-amount" readonly> --}}
@@ -230,10 +220,11 @@
                                         </div>
                                     </div>
                                     <input type="hidden" name="payamount" id="payamount">
+                                    <input type="hidden" name="fees" id="feesamo">
                                     <div class="loan__input-item">
                                         <div class="loan__input">
                                             <div class="loan__input-title">
-                                                <label for="loan-amount">Investment Time Period</label>
+                                                <label for="loan-amount">Trading Time Period</label>
                                             </div>
                                             <div class="loan__range">
                                                 <input type="text" value="12 Month" readonly>
@@ -372,9 +363,11 @@
                 $("#calculator").slideToggle();
                 $("#choose_account").slideToggle();
             });
+            var myButton = $(".choose_account");
             $(".choose_account").click(function(e) {
                 valed = valed_acc();
                 if (valed) {
+                    myButton.prop("disabled", true);
                     e.preventDefault();
                     var data = new FormData($('#company_add_form')[0]);
                     data.append('_token', '{{ csrf_token() }}');
@@ -390,6 +383,7 @@
                                 $("#choose_account").slideToggle();
                                 $("#payment").slideToggle();
                             } else {
+                                myButton.prop("disabled", false);
                                 $.each(result.data, function(key, val) {
                                     $("#" + key + "_error").text(val[0]);
                                     $("#" + key + "_error").show('slide', { direction: 'right' }, TIME);
@@ -397,6 +391,7 @@
                             }
                         },
                         error: function(result) {
+                            myButton.prop("disabled", false);
                             $.each(result.data, function(key, val) {
                                 $("#" + key + "_error").text(val[0]);
                                 $("#" + key + "_error").show('slide', { direction: 'right' }, TIME);

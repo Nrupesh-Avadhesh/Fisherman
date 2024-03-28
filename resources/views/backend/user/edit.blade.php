@@ -30,18 +30,18 @@
                                                         <div class="row">
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="form-label">Is Pay</label>
-                                                                        {!! Form::select('is_pay', ['0' => 'No', '1' => 'YES'], old('is_pay', @$user->is_pay), ['class' => 'col-sm-12 form-control']); !!}
-                                                                    @error('is_pay')
+                                                                    <label class="form-label">First Name</label>
+                                                                    <input type="text" name="first_name" value="{{ old('first_name', @$user->first_name) }}" placeholder="First Name" class="form-control">
+                                                                    @error('first_name')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="form-label">Name</label>
-                                                                    <input type="text" name="name" value="{{ old('name', @$user->name) }}" placeholder="Heading" class="form-control" readonly>
-                                                                    @error('name')
+                                                                    <label class="form-label">Last Name</label>
+                                                                    <input type="text" name="last_name" value="{{ old('last_name', @$user->last_name) }}" placeholder="Last Name" class="form-control">
+                                                                    @error('last_name')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>
@@ -49,7 +49,7 @@
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Email</label>
-                                                                    <input type="text" name="email" value="{{ old('email', @$user->email) }}" placeholder="Heading" class="form-control" readonly>
+                                                                    <input type="email" name="email" value="{{ old('email', @$user->email) }}" placeholder="Email" class="form-control">
                                                                     @error('email')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
@@ -58,7 +58,7 @@
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Mobile Number</label>
-                                                                    <input type="text" name="mobile_number" value="{{ old('mobile_number', @$user->mobile_number) }}" placeholder="Heading" class="form-control" readonly>
+                                                                    <input type="text" name="mobile_number" value="{{ old('mobile_number', @$user->mobile_number) }}" placeholder="Mobile Number" class="form-control">
                                                                     @error('mobile_number')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
@@ -66,8 +66,8 @@
                                                             </div>
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
-                                                                    <label class="form-label">Investment Amount</label>
-                                                                    <input type="text" name="payamount" value="{{ old('payamount', @$user->payamount) }}" placeholder="Heading" class="form-control" readonly>
+                                                                    <label class="form-label">Trade Amount</label>
+                                                                    <input type="number" step="0.01" name="payamount" value="{{ old('payamount', @$user->payamount) }}"  class="form-control" >
                                                                     @error('payamount')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
@@ -76,20 +76,27 @@
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Management Fees</label>
-                                                                    @php
-                                                                        $mf = round((@$user->payamount *10)/100, 2);
-                                                                    @endphp
-                                                                    <input type="number" step="0.01" value="{{ old('payamount', @$mf) }}"  class="form-control" readonly>
-                                                                    @error('payamount')
-                                                                        <div class="text-danger">{{ $message }}</div>
+                                                                    <input type="number" step="0.01" name="fees" value="{{ old('fees', @$user->fees) }}" placeholder="Heading" class="form-control">
+                                                                    @error('fees')
+                                                                    <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12 col-md-6">
                                                                 <div class="form-group">
                                                                     <label class="form-label">Account</label>
-                                                                    <input type="text" name="account" value="{{ old('account', @$user->account) }}" placeholder="Heading" class="form-control" readonly>
+                                                                    {{-- <input type="text" name="account" value="{{ old('account', @$user->account) }}" placeholder="Heading" class="form-control" readonly> --}}
+                                                                    {!! Form::select('account', ['Referral Partner' => 'Referral Partner', 'Existing Account' => 'Existing Account'], old('account', @$user->account), ['class' => 'col-sm-12 form-control']); !!}
                                                                     @error('account')
+                                                                        <div class="text-danger">{{ $message }}</div>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="form-label">Is Pay</label>
+                                                                        {!! Form::select('is_pay', ['0' => 'No', '1' => 'YES'], old('is_pay', @$user->is_pay), ['class' => 'col-sm-12 form-control']); !!}
+                                                                    @error('is_pay')
                                                                         <div class="text-danger">{{ $message }}</div>
                                                                     @enderror
                                                                 </div>
